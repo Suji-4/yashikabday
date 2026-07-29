@@ -23,93 +23,56 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
+<body class="bg-black text-white overflow-hidden">
 
-<body class="bg-black overflow-x-hidden text-white">
-
-<!-- Background -->
-
+<!-- Aurora Background -->
 <div id="background"></div>
 
-<!-- Music -->
-
+<!-- Background Music -->
 <audio id="music" loop>
-
-<source src="music.mp3" type="audio/mp3">
-
+    <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<!-- Loading -->
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
 
-<section id="loader">
+    <div class="glass-card">
 
-<div class="loader-heart">
+        <h3>Hello 👋</h3>
 
-❤️
+        <h1>Yashika R</h1>
 
-</div>
+        <p>
+            Someone made something special just for you...
+        </p>
 
-<h1>
+        <button class="nextBtn" data-next="page2">
+            Start ❤️
+        </button>
 
-Preparing Something Special...
-
-</h1>
-
-</section>
-
-<!-- Welcome -->
-
-<section id="welcome">
-
-<div class="glass-card">
-
-<h3>
-
-Hey 👋
-
-</h3>
-
-<h1>
-
-Yashika R
-
-</h1>
-
-<p>
-
-Someone spent time creating something
-special just for you...
-
-</p>
-
-<button id="startBtn">
-
-Open My Surprise 🎁
-
-</button>
-
-</div>
+    </div>
 
 </section>
 
-<!-- Countdown -->
+<!-- PAGE 2 -->
 
-<section id="countdownSection">
+<section class="page" id="page2">
 
-<div id="countdown">
+    <h1 class="countdown">
 
-3
+        3
 
-</div>
+    </h1>
 
 </section>
 
-<!-- Gift -->
+<!-- PAGE 3 -->
 
-<section id="giftSection">
+<section class="page" id="page3">
 
 <h2>
 
-Tap The Gift
+Tap Your Gift 🎁
 
 </h2>
 
@@ -121,21 +84,21 @@ Tap The Gift
 
 </section>
 
-<!-- Hero -->
+<!-- PAGE 4 -->
 
-<section id="hero">
+<section class="page" id="page4">
 
-<div class="glass-card hero-card">
+<div class="glass-card">
 
 <h1>
 
-Happy Birthday
+Happy Birthday ❤️
 
 </h1>
 
 <h2>
 
-Yashika ❤️
+Yashika R
 
 </h2>
 
@@ -143,19 +106,29 @@ Yashika ❤️
 
 </p>
 
+<button class="nextBtn"
+
+data-next="page5">
+
+Next →
+
+</button>
+
 </div>
 
 </section>
 
-<!-- Gallery -->
+<!-- PAGE 5 -->
 
-<section id="gallery">
+<section class="page"
 
-<h2>
+id="page5">
+
+<h1>
 
 Our Memories 📸
 
-</h2>
+</h1>
 
 <div class="gallery-grid">
 
@@ -171,21 +144,56 @@ Our Memories 📸
 
 <img src="images/photo6.jpg">
 
-<img src="images/photo7.jpg">
-
-<img src="images/photo8.jpg">
-
-<img src="images/photo9.jpg">
-
-<img src="images/photo10.jpg">
-
 </div>
+
+<button class="nextBtn"
+
+data-next="page6">
+
+Next →
+
+</button>
 
 </section>
 
-<!-- Cake -->
+<!-- PAGE 6 -->
 
-<section id="cakeSection">
+<section class="page"
+
+id="page6">
+
+<div class="letter-card">
+
+<h1>
+
+💌 Dear Yashika
+
+</h1>
+
+<p>
+
+Your beautiful birthday letter
+will come here...
+
+</p>
+
+</div>
+
+<button class="nextBtn"
+
+data-next="page7">
+
+Next →
+
+</button>
+
+</section>
+
+<!-- PAGE 7 -->
+
+<section class="page"
+
+id="page7">
 
 <h2>
 
@@ -197,9 +205,7 @@ Make A Birthday Wish 🎂
 
 <div id="candle">
 
-<div id="flame">
-
-</div>
+<div id="flame"></div>
 
 </div>
 
@@ -207,62 +213,44 @@ Make A Birthday Wish 🎂
 
 <button id="blowBtn">
 
-Blow The Candle 🕯️
+Blow Candle 🕯️
 
 </button>
 
 </section>
 
-<!-- Final Letter -->
+<!-- PAGE 8 -->
 
-<section id="letterSection">
+<section class="page"
 
-<div class="letter-card">
-
-<h1>
-
-💌 Dear Yashika
-
-</h1>
-
-<p id="letterText">
-
-Your special birthday message
-will appear here...
-
-</p>
-
-</div>
-
-</section>
-
-<!-- Fireworks -->
-
-<canvas id="fireworks">
-
-</canvas>
-
-<!-- Replay -->
-
-<section id="endSection">
+id="page8">
 
 <h1>
 
-Thank You ❤️
+🎆
 
 </h1>
+
+<h2>
+
+Happy Birthday
+
+Yashika ❤️
+
+</h2>
 
 <p>
 
-Every friendship has a story.
+Thank you for being
+my best friend.
 
-Thank you for being one of my favourite chapters.
+❤️
 
 </p>
 
 <button id="replay">
 
-Replay Surprise 🎁
+Replay 🎁
 
 </button>
 
@@ -270,11 +258,9 @@ Replay Surprise 🎁
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 
 <script src="script.js"></script>
 
