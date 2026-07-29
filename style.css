@@ -1238,3 +1238,256 @@ transform:scale(1.1);
 }
 
 }
+
+/* =====================================
+   BIRTHDAY PAGE DESIGN
+===================================== */
+
+
+#page4{
+
+    background:
+
+    radial-gradient(
+        circle at top,
+        #ff6bb5,
+        transparent 40%
+    );
+
+}
+
+
+
+/* Card */
+
+
+.birthday-card{
+
+    width:min(90%,700px);
+
+    padding:60px 45px;
+
+    border-radius:35px;
+
+    background:
+
+    rgba(255,255,255,.12);
+
+
+    backdrop-filter:blur(25px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.25);
+
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.4);
+
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+
+}
+
+
+
+/* Title */
+
+
+.birthday-card h1{
+
+
+    font-family:"Great Vibes",cursive;
+
+
+    font-size:80px;
+
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #fff,
+        #ffd1ec,
+        #ff6bb5
+    );
+
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+
+    animation:titleGlow 2s infinite alternate;
+
+
+}
+
+
+
+@keyframes titleGlow{
+
+
+from{
+
+filter:drop-shadow(0 0 5px #ff8dcc);
+
+}
+
+
+to{
+
+filter:drop-shadow(0 0 30px #ff4da6);
+
+}
+
+
+}
+
+
+
+.birthday-card h2{
+
+
+    font-size:35px;
+
+    color:#ffe1f2;
+
+    margin-top:15px;
+
+}
+
+
+
+/* Divider */
+
+
+.divider{
+
+    margin:25px;
+
+    font-size:25px;
+
+}
+
+
+
+/* Message */
+
+
+#typing{
+
+    min-height:150px;
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:#fff;
+
+}
+
+
+
+/* Floating hearts */
+
+
+.birthday-card::before{
+
+content:"❤️";
+
+position:absolute;
+
+font-size:50px;
+
+top:20px;
+
+left:30px;
+
+animation:heartMove 3s infinite;
+
+}
+
+
+.birthday-card::after{
+
+content:"💖";
+
+position:absolute;
+
+font-size:50px;
+
+bottom:20px;
+
+right:30px;
+
+animation:heartMove 3s infinite reverse;
+
+}
+
+
+@keyframes heartMove{
+
+
+50%{
+
+transform:translateY(-25px) rotate(20deg);
+
+}
+
+
+}
+
+
+
+/* Stars */
+
+.stars{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background-image:
+
+radial-gradient(
+white 1px,
+transparent 1px
+);
+
+
+background-size:40px 40px;
+
+
+opacity:.3;
+
+
+animation:starsMove 20s linear infinite;
+
+}
+
+
+@keyframes starsMove{
+
+from{
+
+background-position:0 0;
+
+}
+
+to{
+
+background-position:200px 400px;
+
+}
+
+}
