@@ -106,25 +106,44 @@ musicBtn.addEventListener("click", () => {
 
 wishBtn.addEventListener("click", () => {
 
+    // Candle goes out
     flame.style.display = "none";
 
+    // Confetti
     confetti({
-
         particleCount: 400,
-
         spread: 360,
-
         origin: {
-            y: 0.4
+            y: 0.5
         }
-
     });
 
-    alert("🎉 Yay!! Happy Birthday Yashika ❤️");
+    // Small delay before changing page
+    setTimeout(() => {
+
+        // Hide cake section
+        document.querySelector(".cake-section").style.display = "none";
+
+        // Hide old letter section if it exists
+        const oldLetter = document.querySelector(".letter");
+
+        if(oldLetter){
+            oldLetter.style.display = "none";
+        }
+
+        // Show new page
+        const letterPage = document.getElementById("letterPage");
+
+        letterPage.style.display = "flex";
+
+        // Scroll to it
+        letterPage.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    },2000);
 
 });
-
-// ===============================
 // Floating Hearts
 // ===============================
 
