@@ -1,82 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Yashika ❤️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style.css">
+  <title>Happy Birthday Yashika ❤️</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
 
-<!-- Loading Screen -->
-<div id="loader">
-    <div class="loader-heart">❤️</div>
-    <h2>Preparing Your Surprise...</h2>
-</div>
+<body class="bg-black overflow-x-hidden text-white">
+
+<!-- Background -->
+
+<div id="background"></div>
 
 <!-- Music -->
+
 <audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
+
+<source src="music.mp3" type="audio/mp3">
+
 </audio>
 
-<button id="musicBtn">🎵</button>
+<!-- Loading -->
 
-<!-- Hero -->
-<section class="hero">
+<section id="loader">
 
-    <div class="glass">
+<div class="loader-heart">
 
-        <h3>Hello 👋</h3>
+❤️
 
-        <h1>Yashika R</h1>
+</div>
 
-        <p>
-            Someone made something special just for you...
-        </p>
+<h1>
 
-        <button id="giftBtn">
-            🎁 Open Your Gift
-        </button>
+Preparing Something Special...
 
-    </div>
+</h1>
 
 </section>
 
-<!-- Surprise -->
+<!-- Welcome -->
 
-<section id="surprise">
+<section id="welcome">
 
-    <h1 class="title">
-        🎂 Happy Birthday ❤️
-    </h1>
+<div class="glass-card">
 
-    <h2 class="name">
-        Yashika R
-    </h2>
+<h3>
 
-    <p id="typing"></p>
+Hey 👋
+
+</h3>
+
+<h1>
+
+Yashika R
+
+</h1>
+
+<p>
+
+Someone spent time creating something
+special just for you...
+
+</p>
+
+<button id="startBtn">
+
+Open My Surprise 🎁
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Countdown -->
+
+<section id="countdownSection">
+
+<div id="countdown">
+
+3
+
+</div>
+
+</section>
+
+<!-- Gift -->
+
+<section id="giftSection">
+
+<h2>
+
+Tap The Gift
+
+</h2>
+
+<div id="gift">
+
+🎁
+
+</div>
+
+</section>
+
+<!-- Hero -->
+
+<section id="hero">
+
+<div class="glass-card hero-card">
+
+<h1>
+
+Happy Birthday
+
+</h1>
+
+<h2>
+
+Yashika ❤️
+
+</h2>
+
+<p id="typing">
+
+</p>
+
+</div>
 
 </section>
 
 <!-- Gallery -->
 
-<section class="gallery">
+<section id="gallery">
 
-<h2>Beautiful Memories 📸</h2>
+<h2>
 
-<div class="photos">
+Our Memories 📸
+
+</h2>
+
+<div class="gallery-grid">
 
 <img src="images/photo1.jpg">
+
 <img src="images/photo2.jpg">
+
 <img src="images/photo3.jpg">
+
 <img src="images/photo4.jpg">
+
 <img src="images/photo5.jpg">
+
 <img src="images/photo6.jpg">
+
+<img src="images/photo7.jpg">
+
+<img src="images/photo8.jpg">
+
+<img src="images/photo9.jpg">
+
+<img src="images/photo10.jpg">
 
 </div>
 
@@ -84,65 +185,50 @@
 
 <!-- Cake -->
 
-<!-- Cake Section -->
+<section id="cakeSection">
 
-<section class="cake-section">
+<h2>
 
-    <h2>🎂 Make A Birthday Wish</h2>
+Make A Birthday Wish 🎂
 
-    <div class="cake">
+</h2>
 
-        <div class="candle">
-            <div class="flame"></div>
-        </div>
+<div id="cake">
 
-    </div>
+<div id="candle">
 
-    <button id="wishBtn">
-        🕯️ Blow The Candle
-    </button>
+<div id="flame">
 
-</section>
+</div>
 
-<!-- Secret Letter Page -->
+</div>
 
-<section id="letterPage" class="hidden">
+</div>
 
-    <div class="letter-card">
+<button id="blowBtn">
 
-        <h1>💌 Dear Yashika ❤️</h1>
+Blow The Candle 🕯️
 
-        <p id="letterText">
-
-            Today is your special day, and I just wanted to remind you how amazing you are.
-
-            Thank you for being my best friend, for always making me smile, and for creating wonderful memories together.
-
-            I hope your birthday is filled with love, laughter, happiness, and everything you've ever wished for.
-
-            Keep smiling, keep shining, and never stop being the incredible person you are.
-
-            ❤️ Happy Birthday Yashika ❤️
-
-        </p>
-
-    </div>
+</button>
 
 </section>
 
-<!-- Letter -->
+<!-- Final Letter -->
 
-<section class="letter">
+<section id="letterSection">
 
-<div class="letter-box">
+<div class="letter-card">
 
-<h2>💌 Dear Yashika</h2>
+<h1>
 
-<p>
+💌 Dear Yashika
 
-I'll write something special here later...
+</h1>
 
-Happy Birthday ❤️
+<p id="letterText">
+
+Your special birthday message
+will appear here...
 
 </p>
 
@@ -150,29 +236,48 @@ Happy Birthday ❤️
 
 </section>
 
-<!-- Final -->
+<!-- Fireworks -->
 
-<section class="final">
+<canvas id="fireworks">
+
+</canvas>
+
+<!-- Replay -->
+
+<section id="endSection">
 
 <h1>
 
-Thank You For Being My Best Friend ❤️
+Thank You ❤️
 
 </h1>
 
 <p>
 
-May your smile always stay the same.
+Every friendship has a story.
 
-Have the happiest birthday ever.
-
-🎉🎉🎉
+Thank you for being one of my favourite chapters.
 
 </p>
 
+<button id="replay">
+
+Replay Surprise 🎁
+
+</button>
+
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
