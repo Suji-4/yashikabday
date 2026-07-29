@@ -697,3 +697,293 @@ transform:scale(1);
 }
 
 }
+/* =====================================
+   PREMIUM CARD DESIGN
+===================================== */
+
+.glass-card {
+    width: min(90%, 600px);
+    padding: 60px 45px;
+    border-radius: 35px;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.35),
+        inset 0 0 30px rgba(255,255,255,0.08);
+
+    position: relative;
+    overflow: hidden;
+
+    animation: cardFloat 4s ease-in-out infinite;
+}
+
+
+/* glowing border */
+
+.glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        45deg,
+        #ff4da6,
+        #9b5cff,
+        #4ddcff,
+        #ff4da6
+    );
+
+    z-index:-1;
+
+    filter:blur(15px);
+
+    opacity:.7;
+
+}
+
+
+/* floating animation */
+
+@keyframes cardFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+
+/* =====================================
+   TEXT DESIGN
+===================================== */
+
+
+.glass-card h1{
+
+    font-size:70px;
+
+    font-family:"Great Vibes",cursive;
+
+    background:linear-gradient(
+        90deg,
+        #ffd6f5,
+        #ffffff,
+        #ff9ed8
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:20px;
+
+}
+
+
+.glass-card h3{
+
+    font-size:22px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#ffd1ed;
+
+}
+
+
+.glass-card p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#f5f5f5;
+
+}
+
+
+
+/* =====================================
+   PREMIUM BUTTON
+===================================== */
+
+
+.nextBtn,
+#blowBtn,
+#replay{
+
+
+    position:relative;
+
+    margin-top:35px;
+
+    padding:16px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+
+    color:white;
+
+    cursor:pointer;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff4da6,
+        #9b5cff
+    );
+
+
+    box-shadow:
+
+    0 10px 30px rgba(255,77,166,.45);
+
+
+    transition:.4s;
+
+    overflow:hidden;
+
+}
+
+
+
+/* shine effect */
+
+.nextBtn::before,
+#blowBtn::before,
+#replay::before{
+
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:70%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.6),
+transparent
+);
+
+
+transition:.5s;
+
+}
+
+
+
+.nextBtn:hover::before,
+#blowBtn:hover::before,
+#replay:hover::before{
+
+left:130%;
+
+}
+
+
+.nextBtn:hover,
+#blowBtn:hover,
+#replay:hover{
+
+transform:
+
+translateY(-6px)
+scale(1.05);
+
+
+box-shadow:
+
+0 20px 50px rgba(255,77,166,.7);
+
+}
+
+
+
+/* Click effect */
+
+.nextBtn:active,
+#blowBtn:active,
+#replay:active{
+
+transform:scale(.95);
+
+}
+
+
+
+/* =====================================
+   START PAGE SPECIAL
+===================================== */
+
+
+#page1 h1{
+
+animation:
+
+nameGlow 2s infinite alternate;
+
+}
+
+
+@keyframes nameGlow{
+
+from{
+
+text-shadow:
+
+0 0 10px #ff8bd1;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 35px #ff4da6,
+0 0 60px #9b5cff;
+
+}
+
+}
