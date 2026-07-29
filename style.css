@@ -665,3 +665,35 @@ font-size:80px;
 }
 
 }
+.page{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:40px;
+    animation:fade .8s ease;
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
