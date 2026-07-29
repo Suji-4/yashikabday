@@ -987,3 +987,254 @@ text-shadow:
 }
 
 }
+/* =====================================
+   PREMIUM GIFT BOX
+===================================== */
+
+
+#page3 h2{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:55px;
+
+    color:#ffd6f5;
+
+    margin-bottom:50px;
+
+}
+
+
+/* Gift Container */
+
+.gift-box{
+
+    width:230px;
+
+    height:230px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    animation:giftFloat 2s ease-in-out infinite;
+
+}
+
+
+
+@keyframes giftFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+}
+
+
+
+/* Gift Body */
+
+.gift-body{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:230px;
+
+    height:150px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff4da6,
+        #ff82c8
+    );
+
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 25px 50px rgba(255,77,166,.5);
+
+}
+
+
+
+/* Lid */
+
+.gift-lid{
+
+    position:absolute;
+
+    top:55px;
+
+    width:230px;
+
+    height:45px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff8bd1,
+        #ff4da6
+    );
+
+
+    border-radius:12px;
+
+    z-index:5;
+
+
+    transform-origin:left bottom;
+
+
+    transition:1s;
+
+}
+
+
+
+/* Ribbon */
+
+.gift-ribbon{
+
+    position:absolute;
+
+    background:#fff;
+
+    z-index:6;
+
+}
+
+
+
+.vertical{
+
+    width:22px;
+
+    height:230px;
+
+    left:104px;
+
+}
+
+
+
+.horizontal{
+
+    width:230px;
+
+    height:18px;
+
+    top:70px;
+
+}
+
+
+
+/* Bow */
+
+.gift-bow span{
+
+    position:absolute;
+
+    top:25px;
+
+    width:70px;
+
+    height:50px;
+
+    background:#ffd700;
+
+    border-radius:50%;
+
+    z-index:10;
+
+}
+
+
+
+.gift-bow span:first-child{
+
+    left:55px;
+
+    transform:rotate(-35deg);
+
+}
+
+
+
+.gift-bow span:last-child{
+
+    right:55px;
+
+    transform:rotate(35deg);
+
+}
+
+
+
+/* Open Animation */
+
+.gift-box.open .gift-lid{
+
+    transform:
+
+    rotate(-35deg)
+
+    translateY(-40px);
+
+}
+
+
+
+/* Click hint */
+
+.gift-box::after{
+
+    content:"Click me 💖";
+
+    position:absolute;
+
+    bottom:-60px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:18px;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+50%{
+
+opacity:.4;
+
+transform:scale(1.1);
+
+}
+
+}
