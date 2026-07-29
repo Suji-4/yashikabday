@@ -189,3 +189,281 @@ showCursor:false
 });
 
 }
+// =====================================
+// PART 2
+// Gallery • Candle • Hearts • Replay
+// =====================================
+
+// ---------- Gallery Popup ----------
+
+const images = document.querySelectorAll(".gallery-grid img");
+
+images.forEach((img)=>{
+
+    img.addEventListener("click",()=>{
+
+        const overlay=document.createElement("div");
+
+        overlay.style.cssText=`
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,.92);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            z-index:99999;
+            cursor:pointer;
+            backdrop-filter:blur(10px);
+        `;
+
+        const image=document.createElement("img");
+
+        image.src=img.src;
+
+        image.style.cssText=`
+            max-width:90%;
+            max-height:90%;
+            border-radius:20px;
+            box-shadow:0 20px 60px rgba(255,255,255,.2);
+            animation:zoomImage .4s ease;
+        `;
+
+        overlay.appendChild(image);
+
+        overlay.onclick=()=>overlay.remove();
+
+        document.body.appendChild(overlay);
+
+    });
+
+});
+
+// ---------- Floating Hearts ----------
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.innerHTML="❤️";
+
+    heart.style.position="fixed";
+
+    heart.style.left=Math.random()*window.innerWidth+"px";
+
+    heart.style.bottom="-50px";
+
+    heart.style.fontSize=(18+Math.random()*22)+"px";
+
+    heart.style.pointerEvents="none";
+
+    heart.style.zIndex="999";
+
+    document.body.appendChild(heart);
+
+    let pos=0;
+
+    const move=setInterval(()=>{
+
+        pos++;
+
+        heart.style.bottom=(pos*3)+"px";
+
+        heart.style.transform=`translateX(${Math.sin(pos/12)*30}px)`;
+
+        heart.style.opacity=1-pos/260;
+
+        if(pos>260){
+
+            clearInterval(move);
+
+            heart.remove();
+
+        }
+
+    },20);
+
+}
+
+setInterval(createHeart,800);
+
+// ---------- Cursor Sparkles ----------
+
+document.addEventListener("mousemove",(e)=>{
+
+    const star=document.createElement("span");
+
+    star.innerHTML="✨";
+
+    star.style.position="fixed";
+
+    star.style.left=e.clientX+"px";
+
+    star.style.top=e.clientY+"px";
+
+    star.style.pointerEvents="none";
+
+    star.style.fontSize="16px";
+
+    star.style.opacity=".8";
+
+    document.body.appendChild(star);
+
+    gsap.to(star,{
+
+        y:-35,
+
+        opacity:0,
+
+        duration:1,
+
+        onComplete(){
+
+            star.remove();
+
+        }
+
+    });
+
+});
+
+// ---------- Blow Candle ----------
+
+blowBtn.addEventListener("click",()=>{
+
+    gsap.to(flame,{
+
+        opacity:0,
+
+        scale:0,
+
+        duration:.6
+
+    });
+
+    confetti({
+
+        particleCount:500,
+
+        spread:360,
+
+        origin:{y:.5}
+
+    });
+
+    createFireworks();
+
+    setTimeout(()=>{
+
+        document.getElementById("letterSection").scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    },2500);
+
+});
+
+// ---------- Fireworks ----------
+
+function createFireworks(){
+
+    const duration=5000;
+
+    const end=Date.now()+duration;
+
+    (function frame(){
+
+        confetti({
+
+            particleCount:6,
+
+            angle:60,
+
+            spread:70,
+
+            origin:{x:0}
+
+        });
+
+        confetti({
+
+            particleCount:6,
+
+            angle:120,
+
+            spread:70,
+
+            origin:{x:1}
+
+        });
+
+        if(Date.now()<end){
+
+            requestAnimationFrame(frame);
+
+        }
+
+    })();
+
+}
+
+// ---------- Replay ----------
+
+replay.addEventListener("click",()=>{
+
+    location.reload();
+
+});
+
+// ---------- Welcome Animation ----------
+
+gsap.from(".glass-card",{
+
+    y:80,
+
+    opacity:0,
+
+    duration:1.2
+
+});
+
+gsap.from("#welcome h1",{
+
+    scale:.5,
+
+    opacity:0,
+
+    delay:.3,
+
+    duration:1
+
+});
+
+gsap.from("#startBtn",{
+
+    y:40,
+
+    opacity:0,
+
+    delay:.8,
+
+    duration:1
+
+});
+
+// ---------- Floating Gift ----------
+
+gsap.to("#gift",{
+
+    y:-20,
+
+    repeat:-1,
+
+    yoyo:true,
+
+    duration:1.5,
+
+    ease:"power1.inOut"
+
+});
