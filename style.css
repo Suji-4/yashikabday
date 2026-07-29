@@ -1,0 +1,336 @@
+/* ==========================
+   Google Font & Reset
+==========================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ff9ecf,#cba6ff,#9ad7ff);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:white;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ==========================
+Loader
+==========================*/
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#ff6aa8;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.loader-heart{
+    font-size:70px;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.25);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+#loader h2{
+
+margin-top:20px;
+font-size:26px;
+
+}
+
+/* ==========================
+Music Button
+==========================*/
+
+#musicBtn{
+
+position:fixed;
+
+right:25px;
+
+top:25px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+z-index:100;
+
+transition:.3s;
+
+}
+
+#musicBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+/* ==========================
+Hero
+==========================*/
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px;
+
+}
+
+.glass{
+
+width:700px;
+
+max-width:90%;
+
+padding:60px;
+
+text-align:center;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.35);
+
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.glass h3{
+
+font-size:24px;
+
+font-weight:300;
+
+}
+
+.glass h1{
+
+font-size:70px;
+
+font-family:'Great Vibes',cursive;
+
+margin:20px 0;
+
+}
+
+.glass p{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
+
+/* Gift Button */
+
+#giftBtn{
+
+padding:18px 50px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:20px;
+
+cursor:pointer;
+
+background:white;
+
+color:#ff2d75;
+
+font-weight:bold;
+
+transition:.4s;
+
+}
+
+#giftBtn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 15px 35px rgba(255,255,255,.4);
+
+}
+
+/* ==========================
+Birthday Section
+==========================*/
+
+#surprise{
+
+padding:120px 30px;
+
+text-align:center;
+
+}
+
+.title{
+
+font-size:70px;
+
+font-family:'Great Vibes',cursive;
+
+margin-bottom:20px;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 15px white;
+}
+
+to{
+text-shadow:0 0 40px pink;
+}
+
+}
+
+.name{
+
+font-size:45px;
+
+margin-bottom:30px;
+
+}
+
+#typing{
+
+max-width:800px;
+
+margin:auto;
+
+font-size:22px;
+
+line-height:1.8;
+
+}
+
+/* ==========================
+Floating Hearts
+==========================*/
+
+body::before,
+body::after{
+
+content:"❤️";
+
+position:fixed;
+
+font-size:30px;
+
+animation:heartFloat 12s linear infinite;
+
+opacity:.5;
+
+pointer-events:none;
+
+}
+
+body::before{
+
+left:8%;
+
+}
+
+body::after{
+
+right:10%;
+
+animation-delay:5s;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:.7;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
