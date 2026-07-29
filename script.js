@@ -115,35 +115,26 @@ function startCountdown(){
 
 gift.addEventListener("click",()=>{
 
-    gsap.to("#gift",{
+    gift.classList.add("open");
 
-        scale:1.3,
 
-        rotation:20,
+    confetti({
 
-        repeat:3,
+        particleCount:200,
 
-        yoyo:true,
-
-        duration:.25,
-
-        onComplete:()=>{
-
-            confetti({
-
-                particleCount:250,
-
-                spread:180
-
-            });
-
-            showPage("page4");
-
-            startTyping();
-
-        }
+        spread:180
 
     });
+
+
+    setTimeout(()=>{
+
+        showPage("page4");
+
+        startTyping();
+
+    },1200);
+
 
 });
 
