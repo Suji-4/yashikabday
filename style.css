@@ -1,11 +1,16 @@
-/* ==========================
-   Google Font & Reset
-==========================*/
+/* =====================================
+   GOOGLE FONT
+===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =====================================
+   RESET
+===================================== */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:"Poppins",sans-serif;
 }
 
 html{
@@ -13,37 +18,81 @@ html{
 }
 
 body{
+    background:#090014;
+    color:#fff;
     overflow-x:hidden;
-    background:linear-gradient(135deg,#ff9ecf,#cba6ff,#9ad7ff);
-    background-size:400% 400%;
-    animation:bgMove 15s ease infinite;
-    color:white;
 }
 
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+/* =====================================
+   ANIMATED BACKGROUND
+===================================== */
 
-/* ==========================
-Loader
-==========================*/
-
-#loader{
+#background{
     position:fixed;
     inset:0;
-    background:#ff6aa8;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+    z-index:-10;
+
+    background:
+    radial-gradient(circle at top left,#ff4db8 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#8b5cf6 0%,transparent 35%),
+    radial-gradient(circle at center,#2563eb22 0%,transparent 45%),
+    linear-gradient(135deg,#090014,#150028,#22003d);
+
+    background-size:300% 300%;
+
+    animation:aurora 16s ease infinite;
+}
+
+@keyframes aurora{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* =====================================
+   LOADER
+===================================== */
+
+#loader{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
 }
 
 .loader-heart{
-    font-size:70px;
-    animation:beat 1s infinite;
+
+font-size:90px;
+
+animation:beat 1s infinite;
+
+}
+
+#loader h1{
+
+margin-top:20px;
+
+font-size:34px;
+
+font-weight:600;
+
 }
 
 @keyframes beat{
@@ -53,7 +102,7 @@ transform:scale(1);
 }
 
 50%{
-transform:scale(1.25);
+transform:scale(1.2);
 }
 
 100%{
@@ -62,58 +111,11 @@ transform:scale(1);
 
 }
 
-#loader h2{
+/* =====================================
+   SECTION
+===================================== */
 
-margin-top:20px;
-font-size:26px;
-
-}
-
-/* ==========================
-Music Button
-==========================*/
-
-#musicBtn{
-
-position:fixed;
-
-right:25px;
-
-top:25px;
-
-width:55px;
-
-height:55px;
-
-border:none;
-
-border-radius:50%;
-
-background:white;
-
-font-size:24px;
-
-cursor:pointer;
-
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-
-z-index:100;
-
-transition:.3s;
-
-}
-
-#musicBtn:hover{
-
-transform:scale(1.1);
-
-}
-
-/* ==========================
-Hero
-==========================*/
-
-.hero{
+section{
 
 min-height:100vh;
 
@@ -123,214 +125,218 @@ justify-content:center;
 
 align-items:center;
 
-padding:40px;
+flex-direction:column;
+
+padding:60px 20px;
 
 }
 
-.glass{
+/* =====================================
+   GLASS CARD
+===================================== */
 
-width:700px;
+.glass-card{
 
-max-width:90%;
+width:min(90%,760px);
 
-padding:60px;
-
-text-align:center;
+padding:55px;
 
 border-radius:30px;
 
-background:rgba(255,255,255,.18);
+background:rgba(255,255,255,.12);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(18px);
 
-border:1px solid rgba(255,255,255,.35);
+border:1px solid rgba(255,255,255,.18);
 
-box-shadow:0 20px 40px rgba(0,0,0,.15);
+box-shadow:0 25px 60px rgba(0,0,0,.35);
 
-animation:float 4s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-12px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-.glass h3{
-
-font-size:24px;
-
-font-weight:300;
-
-}
-
-.glass h1{
-
-font-size:70px;
-
-font-family:'Great Vibes',cursive;
-
-margin:20px 0;
-
-}
-
-.glass p{
-
-font-size:18px;
-
-line-height:1.8;
-
-margin-bottom:35px;
-
-}
-
-/* Gift Button */
-
-#giftBtn{
-
-padding:18px 50px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:20px;
-
-cursor:pointer;
-
-background:white;
-
-color:#ff2d75;
-
-font-weight:bold;
+text-align:center;
 
 transition:.4s;
 
 }
 
-#giftBtn:hover{
+.glass-card:hover{
 
-transform:scale(1.08);
+transform:translateY(-8px);
 
-box-shadow:0 15px 35px rgba(255,255,255,.4);
-
-}
-
-/* ==========================
-Birthday Section
-==========================*/
-
-#surprise{
-
-padding:120px 30px;
-
-text-align:center;
+box-shadow:0 35px 80px rgba(255,105,180,.35);
 
 }
 
-.title{
+/* =====================================
+   WELCOME
+===================================== */
 
-font-size:70px;
+#welcome h3{
 
-font-family:'Great Vibes',cursive;
+font-size:28px;
 
-margin-bottom:20px;
-
-animation:glow 2s infinite alternate;
-
-}
-
-@keyframes glow{
-
-from{
-text-shadow:0 0 15px white;
-}
-
-to{
-text-shadow:0 0 40px pink;
-}
+font-weight:300;
 
 }
 
-.name{
+#welcome h1{
 
-font-size:45px;
+font-size:78px;
 
-margin-bottom:30px;
+font-family:"Great Vibes",cursive;
+
+margin:20px 0;
+
+color:#ffd5f2;
+
+}
+
+#welcome p{
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#eee;
+
+margin-bottom:40px;
+
+}
+
+/* =====================================
+   BUTTON
+===================================== */
+
+button{
+
+padding:16px 45px;
+
+border:none;
+
+border-radius:999px;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:600;
+
+background:linear-gradient(90deg,#ff4db8,#8b5cf6);
+
+color:white;
+
+transition:.35s;
+
+box-shadow:0 10px 30px rgba(255,77,184,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:0 20px 40px rgba(255,77,184,.5);
+
+}
+
+/* =====================================
+   COUNTDOWN
+===================================== */
+
+#countdown{
+
+font-size:180px;
+
+font-weight:700;
+
+background:linear-gradient(90deg,#fff,#ff7edb);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+text-shadow:0 0 50px rgba(255,255,255,.35);
+
+}
+
+/* =====================================
+   GIFT
+===================================== */
+
+#giftSection h2{
+
+margin-bottom:40px;
+
+font-size:40px;
+
+}
+
+#gift{
+
+font-size:160px;
+
+cursor:pointer;
+
+transition:.5s;
+
+animation:giftFloat 2.5s ease-in-out infinite;
+
+filter:drop-shadow(0 0 20px rgba(255,105,180,.5));
+
+}
+
+#gift:hover{
+
+transform:scale(1.15) rotate(-8deg);
+
+}
+
+@keyframes giftFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero-card h1{
+
+font-size:80px;
+
+font-family:"Great Vibes",cursive;
+
+color:#ffd6f3;
+
+}
+
+.hero-card h2{
+
+font-size:42px;
+
+margin:20px 0;
 
 }
 
 #typing{
 
-max-width:800px;
+margin-top:25px;
 
-margin:auto;
+font-size:20px;
 
-font-size:22px;
+line-height:1.9;
 
-line-height:1.8;
+color:#f8f8f8;
 
-}
+min-height:180px;
 
-/* ==========================
-Floating Hearts
-==========================*/
-
-body::before,
-body::after{
-
-content:"❤️";
-
-position:fixed;
-
-font-size:30px;
-
-animation:heartFloat 12s linear infinite;
-
-opacity:.5;
-
-pointer-events:none;
-
-}
-
-body::before{
-
-left:8%;
-
-}
-
-body::after{
-
-right:10%;
-
-animation-delay:5s;
-
-}
-
-@keyframes heartFloat{
-
-0%{
-transform:translateY(100vh) rotate(0deg);
-opacity:0;
-}
-
-20%{
-opacity:.7;
-}
-
-100%{
-transform:translateY(-120vh) rotate(360deg);
-opacity:0;
-}
 }
