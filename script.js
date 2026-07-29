@@ -155,11 +155,16 @@ function startTyping(){
         strings:[
 
 `Happy Birthday Yashika ❤️<br><br>
-You are one of the kindest people I know.
+
+Today is your special day ✨<br>
+
+I hope your life is always filled with happiness,
+success, and beautiful memories.<br><br>
+
 Thank you for being my best friend.
-May your smile never fade,
-your dreams come true,
-and may this year bring you endless happiness. 🎂✨`
+Keep smiling always because your smile makes everything better. 💖<br><br>
+
+Have the most amazing birthday ever! 🎂✨`
 
         ],
 
