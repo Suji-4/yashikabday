@@ -1,51 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Happy Birthday Yashika ❤️</title>
+```
+<meta charset="UTF-8">
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Happy Birthday Yashika ❤️</title>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<!-- Your CSS -->
+<link rel="stylesheet" href="style.css">
+```
 
 </head>
+
 <body class="bg-black text-white overflow-hidden">
 
-<!-- Aurora Background -->
+```
+<!-- =====================================
+     BACKGROUND
+====================================== -->
+
 <div id="background"></div>
 
-<!-- Background Music -->
+
+<!-- =====================================
+     MUSIC
+====================================== -->
+
 <audio id="music" loop>
-    <source src="music.mp3" type="audio/mp3">
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+
 </audio>
 
-<!-- PAGE 1 -->
-<section class="page active" id="page1">
+
+<!-- =====================================
+     PAGE 1
+====================================== -->
+
+<section
+    class="page active"
+    id="page1"
+>
 
     <div class="glass-card">
 
-        <h3>Hello 👋</h3>
-
-        <h1>Yashika R</h1>
-
         <p>
-            Someone made something special just for you...
+            Hello 👋
         </p>
 
-        <button class="nextBtn" data-next="page2">
+        <h1>
+            Yashika R
+        </h1>
+
+        <p>
+            Someone made something special
+            just for you...
+        </p>
+
+        <button
+            class="nextBtn"
+            data-next="page2"
+        >
             Start ❤️
         </button>
 
@@ -53,46 +96,106 @@
 
 </section>
 
-<!-- PAGE 2 -->
 
-<section class="page" id="page2">
+<!-- =====================================
+     PAGE 2 : COUNTDOWN
+====================================== -->
 
-    <h1 class="countdown">
+<section
+    class="page"
+    id="page2"
+>
 
-        3
+    <div class="countdown-container">
 
-    </h1>
+        <p class="countdown-label">
+            GET READY...
+        </p>
+
+        <h1 class="countdown">
+            3
+        </h1>
+
+    </div>
 
 </section>
 
-<!-- PAGE 3 -->
 
-<div class="gift-box" id="gift">
+<!-- =====================================
+     PAGE 3 : GIFT
+====================================== -->
 
-    <div class="gift-lid"></div>
+<section
+    class="page"
+    id="page3"
+>
 
-    <div class="gift-bow">
-        <span></span>
-        <span></span>
+    <div class="gift-page">
+
+        <p class="gift-label">
+            SOMETHING SPECIAL FOR YOU ✨
+        </p>
+
+        <h1 class="gift-title">
+            A Little Surprise
+        </h1>
+
+        <p class="gift-subtitle">
+            Tap the gift to open it 🎁
+        </p>
+
+
+        <!-- GIFT -->
+
+        <div
+            class="gift-box"
+            id="gift"
+        >
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-bow">
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+            <div class="gift-ribbon vertical"></div>
+
+            <div class="gift-ribbon horizontal"></div>
+
+            <div class="gift-body"></div>
+
+        </div>
+
+
+        <p class="gift-hint">
+            Your surprise is waiting... 💕
+        </p>
+
     </div>
 
-    <div class="gift-ribbon vertical"></div>
+</section>
 
-    <div class="gift-ribbon horizontal"></div>
 
-    <div class="gift-body"></div>
+<!-- =====================================
+     PAGE 4 : BIRTHDAY MESSAGE
+====================================== -->
 
-</div>
-
-<!-- PAGE 4 -->
-
-<!-- PAGE 4 -->
-
-<section class="page" id="page4">
+<section
+    class="page"
+    id="page4"
+>
 
     <div class="birthday-card">
 
         <div class="stars"></div>
+
+        <p class="birthday-small">
+            TODAY IS YOUR DAY ✨
+        </p>
 
         <h1>
             Happy Birthday
@@ -102,28 +205,32 @@
             Yashika R ❤️
         </h2>
 
-
         <div class="divider">
             ✨ ✨ ✨
         </div>
 
-
         <p id="typing"></p>
 
-
-        <button class="nextBtn" data-next="page5">
+        <button
+            class="nextBtn"
+            data-next="page5"
+        >
             See Our Memories 📸
         </button>
-
 
     </div>
 
 </section>
-<!-- PAGE 5 -->
 
-<!-- PAGE 5 : OUR MEMORIES -->
 
-<section class="page" id="page5">
+<!-- =====================================
+     PAGE 5 : MEMORIES
+====================================== -->
+
+<section
+    class="page"
+    id="page5"
+>
 
     <div class="memory-page">
 
@@ -139,53 +246,125 @@
             Every picture has a story...
         </p>
 
+
         <div class="memory-grid">
 
+
             <div class="memory-photo photo-one">
+
                 <div class="photo-frame">
-                    <img src="images/photo1.jpg" alt="Memory 1">
+
+                    <img
+                        src="images/photo1.jpg"
+                        alt="Memory 1"
+                    >
+
                 </div>
-                <p>Our beginning 💕</p>
+
+                <p>
+                    Our beginning 💕
+                </p>
+
             </div>
+
 
             <div class="memory-photo photo-two">
+
                 <div class="photo-frame">
-                    <img src="images/photo2.jpg" alt="Memory 2">
+
+                    <img
+                        src="images/photo2.jpg"
+                        alt="Memory 2"
+                    >
+
                 </div>
-                <p>Crazy moments 😂</p>
+
+                <p>
+                    Crazy moments 😂
+                </p>
+
             </div>
+
 
             <div class="memory-photo photo-three">
+
                 <div class="photo-frame">
-                    <img src="images/photo3.jpg" alt="Memory 3">
+
+                    <img
+                        src="images/photo3.jpg"
+                        alt="Memory 3"
+                    >
+
                 </div>
-                <p>Forever memories ✨</p>
+
+                <p>
+                    Forever memories ✨
+                </p>
+
             </div>
+
 
             <div class="memory-photo photo-four">
+
                 <div class="photo-frame">
-                    <img src="images/photo4.jpg" alt="Memory 4">
+
+                    <img
+                        src="images/photo4.jpg"
+                        alt="Memory 4"
+                    >
+
                 </div>
-                <p>Just us ❤️</p>
+
+                <p>
+                    Just us ❤️
+                </p>
+
             </div>
+
 
             <div class="memory-photo photo-five">
+
                 <div class="photo-frame">
-                    <img src="images/photo5.jpg" alt="Memory 5">
+
+                    <img
+                        src="images/photo5.jpg"
+                        alt="Memory 5"
+                    >
+
                 </div>
-                <p>Best days 🌸</p>
+
+                <p>
+                    Best days 🌸
+                </p>
+
             </div>
 
+
             <div class="memory-photo photo-six">
+
                 <div class="photo-frame">
-                    <img src="images/photo6.jpg" alt="Memory 6">
+
+                    <img
+                        src="images/photo6.jpg"
+                        alt="Memory 6"
+                    >
+
                 </div>
-                <p>Always together 🫶</p>
+
+                <p>
+                    Always together 🫶
+                </p>
+
             </div>
+
 
         </div>
 
-        <button class="nextBtn memory-next" data-next="page6">
+
+        <button
+            class="nextBtn memory-next"
+            data-next="page6"
+        >
             There's More 💌
         </button>
 
@@ -193,11 +372,15 @@
 
 </section>
 
-<!-- PAGE 6 -->
 
-<!-- PAGE 6 : LETTER -->
+<!-- =====================================
+     PAGE 6 : LETTER
+====================================== -->
 
-<section class="page" id="page6">
+<section
+    class="page"
+    id="page6"
+>
 
     <div class="letter-page">
 
@@ -209,13 +392,18 @@
             Open My Letter
         </h1>
 
-        <!-- Envelope -->
 
-        <div class="envelope-wrapper" id="envelope">
+        <!-- ENVELOPE -->
+
+        <div
+            class="envelope-wrapper"
+            id="envelope"
+        >
 
             <div class="envelope">
 
                 <div class="envelope-back"></div>
+
 
                 <div class="letter-paper">
 
@@ -226,24 +414,27 @@
                         </h2>
 
                         <p>
-                            Happy Birthday to one of the most
-                            special people in my life.
+                            Happy Birthday to one of the
+                            most special people in my life.
                         </p>
 
                         <p>
-                            From silly conversations to unforgettable
-                            memories, every moment with you is something
+                            From silly conversations to
+                            unforgettable memories, every
+                            moment with you is something
                             I'll always treasure.
                         </p>
 
                         <p>
-                            I hope this new year of your life brings
-                            you everything you've ever wished for.
+                            I hope this new year of your life
+                            brings you everything you've
+                            ever wished for.
                         </p>
 
                         <p>
                             Keep smiling, keep being you,
-                            and never forget how loved you are. 💖
+                            and never forget how loved
+                            you are. 💖
                         </p>
 
                         <p class="letter-ending">
@@ -254,6 +445,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="envelope-front"></div>
 
@@ -267,9 +459,11 @@
 
         </div>
 
+
         <p class="envelope-hint">
             Tap the envelope to open it ✨
         </p>
+
 
         <button
             class="nextBtn letter-next"
@@ -281,48 +475,36 @@
     </div>
 
 </section>
-<!-- PAGE 7 -->
 
-<section class="page"
 
-id="page7">
+<!-- =====================================
+     PAGE 7 : BIRTHDAY CAKE
+====================================== -->
 
-<h2>
-
-Make A Birthday Wish 🎂
-
-</h2>
-
-<div id="cake">
-
-<div id="candle">
-
-<div id="flame"></div>
-
-</div>
-
-</div>
-
-<button id="blowBtn">
-
-Blow Candle 🕯️
-
-</button>
-
-</section>
-
-<!-- PAGE 8 -->
-
-<!-- PAGE 7 : BIRTHDAY CAKE -->
-
-<section class="page" id="page7">
+<section
+    class="page"
+    id="page7"
+>
 
     <div class="cake-page">
 
-        <div class="cake-sparkle sparkle-1">✦</div>
-        <div class="cake-sparkle sparkle-2">✧</div>
-        <div class="cake-sparkle sparkle-3">✦</div>
-        <div class="cake-sparkle sparkle-4">✧</div>
+
+        <div class="cake-sparkle sparkle-1">
+            ✦
+        </div>
+
+        <div class="cake-sparkle sparkle-2">
+            ✧
+        </div>
+
+        <div class="cake-sparkle sparkle-3">
+            ✦
+        </div>
+
+        <div class="cake-sparkle sparkle-4">
+            ✧
+        </div>
+
 
         <p class="wish-label">
             ONE LAST THING ✨
@@ -336,19 +518,23 @@ Blow Candle 🕯️
             Close your eyes, make your biggest wish...
         </p>
 
+
         <!-- CAKE -->
 
         <div class="cake-scene">
 
             <div class="cake-glow"></div>
 
+
             <div class="cake">
 
-                <!-- Candle -->
+
+                <!-- CANDLE -->
 
                 <div class="candle">
 
                     <div class="candle-stripe"></div>
+
 
                     <div id="flame">
 
@@ -358,18 +544,23 @@ Blow Candle 🕯️
 
                 </div>
 
-                <!-- Top icing -->
+
+                <!-- CAKE TOP -->
 
                 <div class="cake-top">
 
                     <span class="icing-drip drip-1"></span>
+
                     <span class="icing-drip drip-2"></span>
+
                     <span class="icing-drip drip-3"></span>
+
                     <span class="icing-drip drip-4"></span>
 
                 </div>
 
-                <!-- Cake body -->
+
+                <!-- CAKE BODY -->
 
                 <div class="cake-body">
 
@@ -379,44 +570,79 @@ Blow Candle 🕯️
 
                 </div>
 
-                <!-- Plate -->
+
+                <!-- PLATE -->
 
                 <div class="cake-plate"></div>
+
 
             </div>
 
         </div>
 
-        <button id="blowBtn" class="blow-button">
 
-            <span>🕯️</span>
+        <!-- BLOW BUTTON -->
+
+        <button
+            id="blowBtn"
+            class="blow-button"
+        >
+
+            <span>
+                🕯️
+            </span>
+
             Blow the Candle
 
         </button>
+
 
         <p class="blow-hint">
             Make your wish before the flame goes out 💖
         </p>
 
+
     </div>
 
 </section>
 
-  <!-- PAGE 8 : FINAL SURPRISE -->
 
-<section class="page" id="page8">
+<!-- =====================================
+     PAGE 8 : FINAL SURPRISE
+====================================== -->
+
+<section
+    class="page"
+    id="page8"
+>
 
     <div class="final-stars"></div>
 
-    <!-- Floating hearts -->
 
-    <div class="final-heart heart-1">❤️</div>
-    <div class="final-heart heart-2">💖</div>
-    <div class="final-heart heart-3">💕</div>
-    <div class="final-heart heart-4">💗</div>
-    <div class="final-heart heart-5">❤️</div>
+    <!-- FLOATING HEARTS -->
 
-    <!-- Fireworks -->
+    <div class="final-heart heart-1">
+        ❤️
+    </div>
+
+    <div class="final-heart heart-2">
+        💖
+    </div>
+
+    <div class="final-heart heart-3">
+        💕
+    </div>
+
+    <div class="final-heart heart-4">
+        💗
+    </div>
+
+    <div class="final-heart heart-5">
+        ❤️
+    </div>
+
+
+    <!-- FIREWORKS -->
 
     <div class="firework firework-1">
         <span></span>
@@ -430,27 +656,36 @@ Blow Candle 🕯️
         <span></span>
     </div>
 
+
+    <!-- FINAL CARD -->
+
     <div class="final-card">
+
 
         <div class="final-crown">
             👑
         </div>
 
+
         <p class="final-small">
             THIS DAY IS ALL ABOUT YOU ✨
         </p>
+
 
         <h1 class="final-title">
             Happy Birthday
         </h1>
 
+
         <h2 class="final-name">
             Yashika R ❤️
         </h2>
 
+
         <div class="final-divider">
             ✨ ───────── ✨
         </div>
+
 
         <p class="final-message">
 
@@ -459,11 +694,10 @@ Blow Candle 🕯️
 
             <br><br>
 
-            May this year bring you
-            beautiful memories,
-            exciting adventures,
-            endless happiness,
-            and everything your heart wishes for. 💕
+            May this year bring you beautiful
+            memories, exciting adventures,
+            endless happiness, and everything
+            your heart wishes for. 💕
 
             <br><br>
 
@@ -473,17 +707,47 @@ Blow Candle 🕯️
 
         </p>
 
+
         <div class="final-wish">
             Here's to another beautiful chapter! 🥂
         </div>
 
-        <button id="replay" class="replay-button">
+
+        <button
+            id="replay"
+            class="replay-button"
+        >
             Experience It Again ↻
         </button>
+
 
     </div>
 
 </section>
+
+
+<!-- =====================================
+     JAVASCRIPT LIBRARIES
+====================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js">
+</script>
+
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js">
+</script>
+
+
+<script
+    src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">
+</script>
+
+
+<!-- YOUR JAVASCRIPT -->
+<script src="script.js"></script>
+```
 
 </body>
 
