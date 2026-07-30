@@ -2592,3 +2592,556 @@ background-position:200px 400px;
     }
 
 }
+
+/* =====================================
+   FINAL SURPRISE PAGE
+===================================== */
+
+#page8 {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #32103d 0%,
+            #12051b 45%,
+            #050208 100%
+        );
+}
+
+/* =====================================
+   STARS
+===================================== */
+
+.final-stars {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    opacity: .35;
+
+    animation:
+        starMove 20s linear infinite;
+
+    pointer-events: none;
+}
+
+@keyframes starMove {
+
+    from {
+        background-position:
+            0 0;
+    }
+
+    to {
+        background-position:
+            200px 400px;
+    }
+
+}
+
+/* =====================================
+   FINAL CARD
+===================================== */
+
+.final-card {
+    position: relative;
+
+    width: min(680px, 90%);
+
+    padding: 50px 45px;
+
+    text-align: center;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.14),
+            rgba(255,255,255,.05)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.22);
+
+    backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.55),
+        inset 0 0 40px rgba(255,255,255,.04);
+
+    z-index: 10;
+
+    animation:
+        finalCardAppear 1.5s ease forwards;
+}
+
+@keyframes finalCardAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(50px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* =====================================
+   CROWN
+===================================== */
+
+.final-crown {
+    font-size: 45px;
+
+    margin-bottom: 5px;
+
+    animation:
+        crownFloat 2s ease-in-out infinite;
+}
+
+@keyframes crownFloat {
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(5deg);
+    }
+
+}
+
+/* =====================================
+   SMALL TEXT
+===================================== */
+
+.final-small {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #ffb9df;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+/* =====================================
+   MAIN TITLE
+===================================== */
+
+.final-title {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(65px, 9vw, 100px);
+
+    line-height: 1;
+
+    margin: 5px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffd0ed,
+            #ff70ba,
+            #fff
+        );
+
+    background-size:
+        250% auto;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    animation:
+        titleShine 4s linear infinite;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255,80,170,.5)
+        );
+}
+
+@keyframes titleShine {
+
+    to {
+        background-position:
+            250% center;
+    }
+
+}
+
+/* =====================================
+   NAME
+===================================== */
+
+.final-name {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(40px, 6vw, 60px);
+
+    color: #fff;
+
+    margin:
+        5px 0 10px;
+
+    text-shadow:
+        0 0 15px #ff4da6,
+        0 0 35px rgba(255,77,166,.7);
+
+    animation:
+        namePulse 2s ease-in-out infinite;
+}
+
+@keyframes namePulse {
+
+    50% {
+        text-shadow:
+            0 0 25px #ff4da6,
+            0 0 60px #ff4da6;
+    }
+
+}
+
+/* =====================================
+   DIVIDER
+===================================== */
+
+.final-divider {
+    color: #ffacd9;
+
+    font-size: 16px;
+
+    margin:
+        15px 0 20px;
+
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+.final-message {
+    color:
+        rgba(255,255,255,.88);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin:
+        0 auto 20px;
+
+    max-width: 560px;
+}
+
+/* =====================================
+   FINAL WISH
+===================================== */
+
+.final-wish {
+    display:
+        inline-block;
+
+    padding:
+        10px 20px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    color:
+        #ffd2ec;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+/* =====================================
+   REPLAY BUTTON
+===================================== */
+
+.replay-button {
+    display: block;
+
+    margin:
+        20px auto 0;
+
+    padding:
+        14px 32px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        .4s ease;
+
+}
+
+.replay-button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    background:
+        rgba(255,77,166,.25);
+
+    box-shadow:
+        0 15px 35px
+        rgba(255,77,166,.3);
+
+}
+
+/* =====================================
+   FLOATING HEARTS
+===================================== */
+
+.final-heart {
+    position: absolute;
+
+    font-size: 30px;
+
+    opacity: .65;
+
+    pointer-events: none;
+
+    animation:
+        heartFloat 6s ease-in-out infinite;
+}
+
+.heart-1 {
+    left: 8%;
+    top: 20%;
+}
+
+.heart-2 {
+    right: 10%;
+    top: 18%;
+
+    animation-delay:
+        1s;
+}
+
+.heart-3 {
+    left: 13%;
+    bottom: 20%;
+
+    animation-delay:
+        2s;
+}
+
+.heart-4 {
+    right: 12%;
+    bottom: 18%;
+
+    animation-delay:
+        3s;
+}
+
+.heart-5 {
+    left: 50%;
+    top: 8%;
+
+    animation-delay:
+        1.5s;
+}
+
+@keyframes heartFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(12deg);
+    }
+
+}
+
+/* =====================================
+   FIREWORKS
+===================================== */
+
+.firework {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    z-index: 2;
+
+    animation:
+        fireworkBurst 3s ease-out infinite;
+}
+
+.firework span {
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 -60px 0 0 #ff7abf,
+        42px -42px 0 0 #ffd166,
+        60px 0 0 0 #fff,
+        42px 42px 0 0 #ff7abf,
+        0 60px 0 0 #ffd166,
+        -42px 42px 0 0 #fff,
+        -60px 0 0 0 #ff7abf,
+        -42px -42px 0 0 #ffd166;
+}
+
+.firework-1 {
+    left: 18%;
+    top: 20%;
+
+    animation-delay:
+        0s;
+}
+
+.firework-2 {
+    right: 20%;
+    top: 25%;
+
+    animation-delay:
+        1s;
+}
+
+.firework-3 {
+    right: 10%;
+    bottom: 20%;
+
+    animation-delay:
+        2s;
+}
+
+@keyframes fireworkBurst {
+
+    0%,
+    70% {
+        opacity: 0;
+        transform:
+            scale(.2);
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: .8;
+        transform:
+            scale(1.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            scale(2);
+    }
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .final-card {
+        padding:
+            35px 22px;
+
+        border-radius:
+            30px;
+
+        max-height:
+            90vh;
+
+        overflow-y:
+            auto;
+    }
+
+    .final-small {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .final-message {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .final-wish {
+        font-size: 18px;
+    }
+
+    .final-heart {
+        font-size: 22px;
+    }
+
+}
