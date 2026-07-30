@@ -180,35 +180,62 @@ Have the most amazing birthday ever! 🎂✨`
 // Blow Candle
 // -------------------------------
 
-blowBtn.addEventListener("click",()=>{
+// =====================================
+// BLOW CANDLE
+// =====================================
 
-    gsap.to(flame,{
+if (blowBtn) {
 
-        opacity:0,
+    blowBtn.addEventListener("click", () => {
 
-        scale:0,
+        if (blowBtn.disabled) {
+            return;
+        }
 
-        duration:.6
+        blowBtn.disabled = true;
+
+        // Blow out flame
+        if (flame) {
+            flame.classList.add("blown");
+        }
+
+        blowBtn.innerHTML = "✨ Wish Made! ✨";
+
+        // Small celebration
+        if (typeof confetti === "function") {
+
+            confetti({
+                particleCount: 180,
+                spread: 100,
+                origin: {
+                    y: 0.55
+                }
+            });
+
+            setTimeout(() => {
+
+                confetti({
+                    particleCount: 250,
+                    spread: 150,
+                    origin: {
+                        y: 0.4
+                    }
+                });
+
+            }, 500);
+
+        }
+
+        // Go to final page
+        setTimeout(() => {
+
+            showPage("page8");
+
+        }, 2200);
 
     });
 
-    confetti({
-
-        particleCount:600,
-
-        spread:360,
-
-        origin:{y:.5}
-
-    });
-
-    setTimeout(()=>{
-
-        showPage("page8");
-
-    },2500);
-
-});
+}
 
 // =====================================
 // LETTER ENVELOPE
