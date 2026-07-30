@@ -2055,3 +2055,540 @@ background-position:200px 400px;
     }
 
 }
+
+/* =====================================
+   BIRTHDAY CAKE PAGE
+===================================== */
+
+#page7 {
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 76, 166, .18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(155, 92, 255, .15),
+            transparent 30%
+        );
+}
+
+.cake-page {
+    width: min(900px, 95%);
+    text-align: center;
+    position: relative;
+}
+
+.wish-label {
+    color: #ffb9df;
+    font-size: 13px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.wish-title {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(60px, 8vw, 90px);
+
+    margin: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffd0eb,
+            #ff71b8
+        );
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter:
+        drop-shadow(
+            0 0 25px rgba(255, 82, 171, .45)
+        );
+}
+
+.wish-subtitle {
+    color: rgba(255,255,255,.75);
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* =====================================
+   CAKE SCENE
+===================================== */
+
+.cake-scene {
+    position: relative;
+
+    width: 360px;
+    height: 310px;
+
+    margin: 20px auto 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Glow behind cake */
+
+.cake-glow {
+    position: absolute;
+
+    width: 270px;
+    height: 170px;
+
+    bottom: 40px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 92, 175, .35),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    animation: cakeGlow 2s ease-in-out infinite;
+}
+
+@keyframes cakeGlow {
+
+    0%, 100% {
+        transform: scale(.95);
+        opacity: .7;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* =====================================
+   CAKE
+===================================== */
+
+.cake {
+    position: relative;
+
+    width: 280px;
+    height: 250px;
+
+    z-index: 2;
+}
+
+/* =====================================
+   CANDLE
+===================================== */
+
+.candle {
+    position: absolute;
+
+    width: 30px;
+    height: 90px;
+
+    left: 50%;
+    top: 5px;
+
+    transform: translateX(-50%);
+
+    border-radius: 7px;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #fff,
+            #fff 8px,
+            #ff72b8 8px,
+            #ff72b8 16px
+        );
+
+    box-shadow:
+        0 4px 15px rgba(255,255,255,.25);
+
+    z-index: 8;
+}
+
+.candle::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 10px;
+
+    background: #333;
+
+    top: -8px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 4px;
+}
+
+.candle-stripe {
+    display: none;
+}
+
+/* =====================================
+   FLAME
+===================================== */
+
+#flame {
+    position: absolute;
+
+    width: 30px;
+    height: 45px;
+
+    left: 50%;
+    top: -48px;
+
+    transform: translateX(-50%);
+
+    border-radius:
+        50% 50% 50% 50%
+        / 65% 65% 35% 35%;
+
+    background:
+        radial-gradient(
+            ellipse at center bottom,
+            #fff,
+            #ffd84d 35%,
+            #ff8c00 65%,
+            #ff4d00
+        );
+
+    box-shadow:
+        0 0 12px #ffd84d,
+        0 0 30px #ff9d00,
+        0 0 55px rgba(255, 157, 0, .6);
+
+    transform-origin: bottom center;
+
+    animation:
+        flameMove .15s infinite alternate;
+}
+
+.flame-inner {
+    position: absolute;
+
+    width: 10px;
+    height: 20px;
+
+    left: 50%;
+    bottom: 5px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: white;
+
+    filter: blur(1px);
+}
+
+@keyframes flameMove {
+
+    from {
+        transform:
+            translateX(-50%)
+            rotate(-3deg)
+            scaleY(1);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            rotate(3deg)
+            scaleY(1.08);
+    }
+}
+
+/* =====================================
+   CAKE TOP
+===================================== */
+
+.cake-top {
+    position: absolute;
+
+    width: 280px;
+    height: 55px;
+
+    top: 80px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff4fa,
+            #ffc9e4
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+    z-index: 5;
+}
+
+/* icing drips */
+
+.icing-drip {
+    position: absolute;
+
+    width: 35px;
+    height: 30px;
+
+    background: #fff1f8;
+
+    border-radius:
+        0 0 20px 20px;
+}
+
+.drip-1 {
+    left: 35px;
+    top: 30px;
+}
+
+.drip-2 {
+    left: 105px;
+    top: 32px;
+}
+
+.drip-3 {
+    right: 95px;
+    top: 28px;
+}
+
+.drip-4 {
+    right: 30px;
+    top: 32px;
+}
+
+/* =====================================
+   CAKE BODY
+===================================== */
+
+.cake-body {
+    position: absolute;
+
+    width: 260px;
+    height: 115px;
+
+    left: 10px;
+    top: 105px;
+
+    border-radius:
+        0 0 22px 22px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e94b96,
+            #ff75b8,
+            #e94b96
+        );
+
+    box-shadow:
+        inset 0 -15px 20px rgba(0,0,0,.12),
+        0 15px 25px rgba(0,0,0,.25);
+
+    z-index: 3;
+}
+
+.cake-layer {
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 25px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #fff,
+            #fff 12px,
+            #ffd8eb 12px,
+            #ffd8eb 24px
+        );
+
+    opacity: .9;
+}
+
+.layer-one {
+    top: 25px;
+}
+
+.layer-two {
+    top: 75px;
+}
+
+/* =====================================
+   CAKE PLATE
+===================================== */
+
+.cake-plate {
+    position: absolute;
+
+    width: 320px;
+    height: 25px;
+
+    bottom: 0;
+    left: -20px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #dcd6e2
+        );
+
+    box-shadow:
+        0 15px 25px rgba(0,0,0,.3);
+
+    z-index: 1;
+}
+
+/* =====================================
+   SPARKLES
+===================================== */
+
+.cake-sparkle {
+    position: absolute;
+
+    color: #fff;
+
+    font-size: 28px;
+
+    animation:
+        sparkleFloat 2s ease-in-out infinite;
+}
+
+.sparkle-1 {
+    left: 15%;
+    top: 35%;
+}
+
+.sparkle-2 {
+    right: 15%;
+    top: 45%;
+    animation-delay: .4s;
+}
+
+.sparkle-3 {
+    left: 25%;
+    top: 65%;
+    animation-delay: .8s;
+}
+
+.sparkle-4 {
+    right: 25%;
+    top: 65%;
+    animation-delay: 1.2s;
+}
+
+@keyframes sparkleFloat {
+
+    0%, 100% {
+        opacity: .2;
+        transform: scale(.7) rotate(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(180deg);
+        text-shadow:
+            0 0 20px white;
+    }
+}
+
+/* =====================================
+   BLOW BUTTON
+===================================== */
+
+.blow-button {
+    margin-top: 5px !important;
+
+    min-width: 230px;
+
+    position: relative;
+}
+
+.blow-button span {
+    margin-right: 8px;
+}
+
+.blow-hint {
+    color: rgba(255,255,255,.55);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* =====================================
+   CANDLE BLOWN OUT
+===================================== */
+
+#flame.blown {
+    animation: blowOut .6s forwards;
+}
+
+@keyframes blowOut {
+
+    0% {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            translateX(35px)
+            scale(.1);
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 500px) {
+
+    .cake-scene {
+        transform: scale(.82);
+        margin-top: 5px;
+        margin-bottom: -20px;
+    }
+
+    .wish-title {
+        font-size: 60px;
+    }
+
+    .wish-subtitle {
+        font-size: 13px;
+    }
+
+    .blow-button {
+        margin-top: 0 !important;
+    }
+
+}
