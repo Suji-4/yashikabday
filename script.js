@@ -210,6 +210,48 @@ blowBtn.addEventListener("click",()=>{
 
 });
 
+// =====================================
+// LETTER ENVELOPE
+// =====================================
+
+const envelope = document.getElementById("envelope");
+const letterNext = document.querySelector(".letter-next");
+
+if (envelope) {
+
+    envelope.addEventListener("click", () => {
+
+        if (envelope.classList.contains("open")) {
+            return;
+        }
+
+        envelope.classList.add("open");
+
+        // Little heart celebration
+        if (typeof confetti === "function") {
+
+            confetti({
+                particleCount: 80,
+                spread: 100,
+                origin: {
+                    y: 0.6
+                }
+            });
+
+        }
+
+        setTimeout(() => {
+
+            if (letterNext) {
+                letterNext.classList.add("show");
+            }
+
+        }, 1800);
+
+    });
+
+}
+
 // -------------------------------
 // Replay
 // -------------------------------
