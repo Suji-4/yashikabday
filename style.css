@@ -1,1617 +1,1056 @@
-/* =====================================
-   GOOGLE FONT
-===================================== */
+```css
+/* =========================================================
+   YASHIKA BIRTHDAY WEBSITE
+   PREMIUM SINGLE CSS
+   Responsive + Scroll Fix
+========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* =====================================
+
+/* =========================================================
    RESET
-===================================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    min-height: 100%;
 }
 
-body{
-    background:#090014;
-    color:#fff;
-    overflow-x:hidden;
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #090014;
+    color: #fff;
+
+    font-family: "Poppins", sans-serif;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-/* =====================================
-   ANIMATED BACKGROUND
-===================================== */
 
-#background{
-    position:fixed;
-    inset:0;
-    z-index:-10;
+/* =========================================================
+   ANIMATED AURORA BACKGROUND
+========================================================= */
+
+#background {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -10;
 
     background:
-    radial-gradient(circle at top left,#ff4db8 0%,transparent 30%),
-    radial-gradient(circle at bottom right,#8b5cf6 0%,transparent 35%),
-    radial-gradient(circle at center,#2563eb22 0%,transparent 45%),
-    linear-gradient(135deg,#090014,#150028,#22003d);
+        radial-gradient(
+            circle at top left,
+            #ff4db8 0%,
+            transparent 30%
+        ),
 
-    background-size:300% 300%;
+        radial-gradient(
+            circle at bottom right,
+            #8b5cf6 0%,
+            transparent 35%
+        ),
 
-    animation:aurora 16s ease infinite;
-}
-
-@keyframes aurora{
-
-0%{
-background-position:0% 50%;
-}
-
-50%{
-background-position:100% 50%;
-}
-
-100%{
-background-position:0% 50%;
-}
-
-}
-
-/* =====================================
-   LOADER
-===================================== */
-
-#loader{
-
-height:100vh;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-.loader-heart{
-
-font-size:90px;
-
-animation:beat 1s infinite;
-
-}
-
-#loader h1{
-
-margin-top:20px;
-
-font-size:34px;
-
-font-weight:600;
-
-}
-
-@keyframes beat{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.2);
-}
-
-100%{
-transform:scale(1);
-}
-
-}
-
-/* =====================================
-   SECTION
-===================================== */
-
-section{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-padding:60px 20px;
-
-}
-
-/* =====================================
-   GLASS CARD
-===================================== */
-
-.glass-card{
-
-width:min(90%,760px);
-
-padding:55px;
-
-border-radius:30px;
-
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.18);
-
-box-shadow:0 25px 60px rgba(0,0,0,.35);
-
-text-align:center;
-
-transition:.4s;
-
-}
-
-.glass-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 35px 80px rgba(255,105,180,.35);
-
-}
-
-/* =====================================
-   WELCOME
-===================================== */
-
-#welcome h3{
-
-font-size:28px;
-
-font-weight:300;
-
-}
-
-#welcome h1{
-
-font-size:78px;
-
-font-family:"Great Vibes",cursive;
-
-margin:20px 0;
-
-color:#ffd5f2;
-
-}
-
-#welcome p{
-
-font-size:19px;
-
-line-height:1.8;
-
-color:#eee;
-
-margin-bottom:40px;
-
-}
-
-/* =====================================
-   BUTTON
-===================================== */
-
-button{
-
-padding:16px 45px;
-
-border:none;
-
-border-radius:999px;
-
-cursor:pointer;
-
-font-size:18px;
-
-font-weight:600;
-
-background:linear-gradient(90deg,#ff4db8,#8b5cf6);
-
-color:white;
-
-transition:.35s;
-
-box-shadow:0 10px 30px rgba(255,77,184,.35);
-
-}
-
-button:hover{
-
-transform:translateY(-4px) scale(1.05);
-
-box-shadow:0 20px 40px rgba(255,77,184,.5);
-
-}
-
-/* =====================================
-   COUNTDOWN
-===================================== */
-
-#countdown{
-
-font-size:180px;
-
-font-weight:700;
-
-background:linear-gradient(90deg,#fff,#ff7edb);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-text-shadow:0 0 50px rgba(255,255,255,.35);
-
-}
-
-/* =====================================
-   GIFT
-===================================== */
-
-#giftSection h2{
-
-margin-bottom:40px;
-
-font-size:40px;
-
-}
-
-#gift{
-
-font-size:160px;
-
-cursor:pointer;
-
-transition:.5s;
+        radial-gradient(
+            circle at center,
+            #2563eb22 0%,
+            transparent 45%
+        ),
 
-animation:giftFloat 2.5s ease-in-out infinite;
+        linear-gradient(
+            135deg,
+            #090014,
+            #150028,
+            #22003d
+        );
 
-filter:drop-shadow(0 0 20px rgba(255,105,180,.5));
+    background-size: 300% 300%;
 
-}
-
-#gift:hover{
-
-transform:scale(1.15) rotate(-8deg);
-
-}
-
-@keyframes giftFloat{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-15px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-/* =====================================
-   HERO
-===================================== */
-
-.hero-card h1{
-
-font-size:80px;
-
-font-family:"Great Vibes",cursive;
-
-color:#ffd6f3;
-
-}
-
-.hero-card h2{
-
-font-size:42px;
-
-margin:20px 0;
-
-}
-
-#typing{
-
-margin-top:25px;
-
-font-size:20px;
-
-line-height:1.9;
-
-color:#f8f8f8;
-
-min-height:180px;
-
-}
-
-/* =====================================
-   GALLERY
-===================================== */
-
-#gallery{
-    padding:100px 8%;
-}
-
-#gallery h2{
-    font-size:48px;
-    margin-bottom:50px;
-    text-align:center;
-    font-family:"Great Vibes",cursive;
-    color:#ffd5f5;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:28px;
-    width:100%;
-    max-width:1300px;
-}
-
-.gallery-grid img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border-radius:22px;
-    cursor:pointer;
-    transition:.45s;
-    border:4px solid rgba(255,255,255,.18);
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
-
-.gallery-grid img:hover{
-    transform:translateY(-12px) scale(1.04) rotate(-2deg);
-    box-shadow:0 25px 60px rgba(255,77,184,.45);
-}
-
-/* =====================================
-   CAKE
-===================================== */
-
-#cakeSection h2{
-    font-size:48px;
-    margin-bottom:60px;
-    font-family:"Great Vibes",cursive;
-}
-
-#cake{
-    width:260px;
-    height:170px;
-    background:linear-gradient(#ff8cc8,#ff6eb4);
-    border-radius:18px;
-    position:relative;
-    box-shadow:0 25px 60px rgba(0,0,0,.35);
-}
-
-#cake::before{
-    content:"";
-    position:absolute;
-    top:30px;
-    left:0;
-    width:100%;
-    height:22px;
-    background:#fff;
-}
-
-#cake::after{
-    content:"";
-    position:absolute;
-    bottom:30px;
-    left:0;
-    width:100%;
-    height:18px;
-    background:#fff;
-}
-
-#candle{
-    width:14px;
-    height:75px;
-    background:#fff;
-    position:absolute;
-    top:-70px;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-#flame{
-    width:20px;
-    height:24px;
-    background:gold;
-    position:absolute;
-    top:-22px;
-    left:-3px;
-    border-radius:50% 50% 50% 50%;
-    filter:blur(.4px);
-    animation:flicker .4s infinite;
-}
-
-@keyframes flicker{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.25);
-}
-
-100%{
-transform:scale(.85);
-}
-
-}
-
-#blowBtn{
-    margin-top:50px;
-}
-
-/* =====================================
-   LETTER
-===================================== */
-
-#letterSection{
-    padding:100px 20px;
-}
-
-.letter-card{
-    width:min(90%,850px);
-    background:rgba(255,255,255,.14);
-    backdrop-filter:blur(20px);
-    border-radius:28px;
-    padding:60px;
-    border:1px solid rgba(255,255,255,.2);
-    box-shadow:0 25px 60px rgba(0,0,0,.35);
-}
-
-.letter-card h1{
-    font-size:60px;
-    font-family:"Great Vibes",cursive;
-    color:#ffd4ef;
-    margin-bottom:30px;
-    text-align:center;
-}
-
-#letterText{
-    font-size:20px;
-    line-height:2;
-    color:#f3f3f3;
-    text-align:center;
-}
-
-/* =====================================
-   END SECTION
-===================================== */
-
-#endSection h1{
-    font-size:90px;
-    font-family:"Great Vibes",cursive;
-    color:#ffd5ef;
-    margin-bottom:20px;
-}
-
-#endSection p{
-    font-size:22px;
-    line-height:2;
-    max-width:700px;
-    text-align:center;
-    color:#ececec;
-    margin-bottom:45px;
-}
-
-/* =====================================
-   FIREWORKS
-===================================== */
-
-#fireworks{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:100;
-}
-
-/* =====================================
-   FLOATING HEARTS
-===================================== */
-
-body::before,
-body::after{
-    content:"❤️";
-    position:fixed;
-    font-size:34px;
-    opacity:.4;
-    animation:heartFloat 12s linear infinite;
-    pointer-events:none;
-}
-
-body::before{
-    left:8%;
-}
-
-body::after{
-    right:10%;
-    animation-delay:6s;
-}
-
-@keyframes heartFloat{
-
-0%{
-transform:translateY(100vh) rotate(0);
-opacity:0;
-}
-
-20%{
-opacity:.7;
-}
-
-100%{
-transform:translateY(-120vh) rotate(360deg);
-opacity:0;
-}
-
-}
-
-/* =====================================
-   SCROLLBAR
-===================================== */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#ff4db8;
-    border-radius:10px;
-}
+    animation: aurora 16s ease infinite;
 
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media(max-width:900px){
-
-#welcome h1{
-font-size:58px;
-}
-
-.hero-card h1{
-font-size:60px;
+    pointer-events: none;
 }
 
-.hero-card h2{
-font-size:32px;
-}
+@keyframes aurora {
 
-#countdown{
-font-size:110px;
-}
+    0% {
+        background-position: 0% 50%;
+    }
 
-#gift{
-font-size:120px;
-}
+    50% {
+        background-position: 100% 50%;
+    }
 
-#gallery h2,
-#cakeSection h2{
-font-size:38px;
-}
+    100% {
+        background-position: 0% 50%;
+    }
 
-.letter-card{
-padding:35px;
 }
 
-.letter-card h1{
-font-size:42px;
-}
 
-#letterText{
-font-size:17px;
-}
+/* =========================================================
+   COMMON PAGE SYSTEM
+   IMPORTANT: DO NOT USE position:absolute HERE
+========================================================= */
 
-#endSection h1{
-font-size:60px;
-}
+.page {
+    position: relative;
 
-#endSection p{
-font-size:18px;
-}
+    width: 100%;
+    min-height: 100vh;
 
-.gallery-grid{
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-}
+    display: none;
 
-.gallery-grid img{
-height:220px;
-}
+    justify-content: center;
+    align-items: center;
 
-}
+    flex-direction: column;
 
-@media(max-width:600px){
+    padding: 80px 25px 120px;
 
-.glass-card{
-padding:30px 22px;
-}
+    overflow: visible;
 
-#welcome h1{
-font-size:46px;
+    animation: pageFade .8s ease;
 }
 
-#welcome p{
-font-size:16px;
+.page.active {
+    display: flex;
 }
 
-button{
-padding:14px 28px;
-font-size:16px;
-}
+@keyframes pageFade {
 
-#countdown{
-font-size:80px;
-}
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
 
-}
-.page{
-    position:absolute;
-    inset:0;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    padding:40px;
-    animation:fade .8s ease;
-}
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 
-.page.active{
-    display:flex;
 }
 
-@keyframes fade{
 
-from{
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
 
-opacity:0;
-transform:scale(.95);
+button {
+    position: relative;
 
-}
-
-to{
+    padding: 16px 45px;
 
-opacity:1;
-transform:scale(1);
+    border: none;
+    border-radius: 999px;
 
-}
+    cursor: pointer;
 
-}
-/* =====================================
-   PREMIUM CARD DESIGN
-===================================== */
+    font-family: "Poppins", sans-serif;
 
-.glass-card {
-    width: min(90%, 600px);
-    padding: 60px 45px;
-    border-radius: 35px;
+    font-size: 17px;
+    font-weight: 600;
 
-    background: rgba(255,255,255,0.12);
+    letter-spacing: .5px;
 
-    backdrop-filter: blur(25px);
+    color: white;
 
-    border: 1px solid rgba(255,255,255,0.25);
+    background:
+        linear-gradient(
+            135deg,
+            #ff4da6,
+            #9b5cff
+        );
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,0.35),
-        inset 0 0 30px rgba(255,255,255,0.08);
+        0 10px 30px rgba(255, 77, 166, .45);
 
-    position: relative;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+
     overflow: hidden;
-
-    animation: cardFloat 4s ease-in-out infinite;
 }
 
+button::before {
+    content: "";
 
-/* glowing border */
+    position: absolute;
 
-.glass-card::before{
+    top: 0;
+    left: -100%;
 
-    content:"";
-
-    position:absolute;
-
-    inset:-2px;
-
-    border-radius:35px;
+    width: 70%;
+    height: 100%;
 
     background:
-    linear-gradient(
-        45deg,
-        #ff4da6,
-        #9b5cff,
-        #4ddcff,
-        #ff4da6
-    );
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
 
-    z-index:-1;
-
-    filter:blur(15px);
-
-    opacity:.7;
-
+    transition: .6s;
 }
 
-
-/* floating animation */
-
-@keyframes cardFloat{
-
-0%,100%{
-
-transform:translateY(0);
-
+button:hover::before {
+    left: 130%;
 }
 
-50%{
+button:hover {
+    transform:
+        translateY(-5px)
+        scale(1.04);
 
-transform:translateY(-12px);
+    box-shadow:
+        0 20px 50px rgba(255,77,166,.65);
 
+    filter: brightness(1.08);
 }
 
+button:active {
+    transform: scale(.95);
 }
-
-
-/* =====================================
-   TEXT DESIGN
-===================================== */
-
-
-.glass-card h1{
-
-    font-size:70px;
-
-    font-family:"Great Vibes",cursive;
-
-    background:linear-gradient(
-        90deg,
-        #ffd6f5,
-        #ffffff,
-        #ff9ed8
-    );
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-    margin-bottom:20px;
-
-}
-
-
-.glass-card h3{
-
-    font-size:22px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    color:#ffd1ed;
-
-}
-
-
-.glass-card p{
-
-    font-size:18px;
-
-    line-height:1.8;
-
-    color:#f5f5f5;
-
-}
-
-
-
-/* =====================================
-   PREMIUM BUTTON
-===================================== */
-
 
 .nextBtn,
 #blowBtn,
-#replay{
+#replay {
+    position: relative;
+    z-index: 30;
+}
 
 
-    position:relative;
+/* =========================================================
+   PAGE 1
+========================================================= */
 
-    margin-top:35px;
-
-    padding:16px 45px;
-
-    border:none;
-
-    border-radius:50px;
-
-
-    font-size:18px;
-
-    font-weight:600;
-
-    letter-spacing:1px;
-
-
-    color:white;
-
-    cursor:pointer;
-
+#page1 {
+    text-align: center;
 
     background:
+        radial-gradient(
+            circle at center,
+            rgba(255,77,166,.12),
+            transparent 50%
+        );
+}
 
-    linear-gradient(
-        135deg,
-        #ff4da6,
-        #9b5cff
-    );
 
+/* =========================================================
+   PREMIUM GLASS CARD
+========================================================= */
+
+.glass-card {
+    position: relative;
+
+    width: min(90%, 600px);
+
+    padding: 60px 45px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid rgba(255,255,255,.25);
 
     box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        inset 0 0 30px rgba(255,255,255,.08);
 
-    0 10px 30px rgba(255,77,166,.45);
+    text-align: center;
+
+    overflow: hidden;
+
+    animation:
+        cardFloat 4s ease-in-out infinite;
+}
+
+.glass-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff4da6,
+            #9b5cff,
+            #4ddcff,
+            #ff4da6
+        );
+
+    z-index: -1;
+
+    filter: blur(15px);
+
+    opacity: .55;
+}
+
+@keyframes cardFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.glass-card h3 {
+    font-size: 22px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #ffd1ed;
+
+    margin-bottom: 15px;
+}
+
+.glass-card h1 {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(55px, 9vw, 75px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffd6f5,
+            #ffffff,
+            #ff9ed8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        nameGlow 2s infinite alternate;
+}
+
+@keyframes nameGlow {
+
+    from {
+        filter:
+            drop-shadow(
+                0 0 8px #ff8bd1
+            );
+    }
+
+    to {
+        filter:
+            drop-shadow(
+                0 0 30px #ff4da6
+            );
+    }
+
+}
+
+.glass-card p {
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #f5f5f5;
+
+    margin-bottom: 10px;
+}
 
 
-    transition:.4s;
+/* =========================================================
+   PAGE 2 - COUNTDOWN
+========================================================= */
 
-    overflow:hidden;
+#page2 {
+    text-align: center;
+
+    min-height: 100vh;
+}
+
+.countdown {
+    font-size:
+        clamp(100px, 20vw, 190px);
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff7edb,
+            #9b5cff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(
+            0 0 40px
+            rgba(255,100,200,.45)
+        );
+
+    animation:
+        countdownGlow 1s infinite alternate;
+}
+
+@keyframes countdownGlow {
+
+    from {
+        transform: scale(.95);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
 
 }
 
 
+/* =========================================================
+   PAGE 3 - GIFT
+========================================================= */
 
-/* shine effect */
+#page3 {
+    text-align: center;
+}
 
-.nextBtn::before,
-#blowBtn::before,
-#replay::before{
+#page3 h2 {
+    font-family:
+        "Great Vibes",
+        cursive;
 
+    font-size:
+        clamp(48px, 7vw, 65px);
 
-content:"";
+    font-weight: 400;
 
-position:absolute;
+    color: #ffd6f5;
 
-top:0;
-
-left:-100%;
-
-width:70%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.6),
-transparent
-);
-
-
-transition:.5s;
-
+    margin-bottom: 50px;
 }
 
 
-
-.nextBtn:hover::before,
-#blowBtn:hover::before,
-#replay:hover::before{
-
-left:130%;
-
-}
-
-
-.nextBtn:hover,
-#blowBtn:hover,
-#replay:hover{
-
-transform:
-
-translateY(-6px)
-scale(1.05);
-
-
-box-shadow:
-
-0 20px 50px rgba(255,77,166,.7);
-
-}
-
-
-
-/* Click effect */
-
-.nextBtn:active,
-#blowBtn:active,
-#replay:active{
-
-transform:scale(.95);
-
-}
-
-
-
-/* =====================================
-   START PAGE SPECIAL
-===================================== */
-
-
-#page1 h1{
-
-animation:
-
-nameGlow 2s infinite alternate;
-
-}
-
-
-@keyframes nameGlow{
-
-from{
-
-text-shadow:
-
-0 0 10px #ff8bd1;
-
-}
-
-to{
-
-text-shadow:
-
-0 0 35px #ff4da6,
-0 0 60px #9b5cff;
-
-}
-
-}
-/* =====================================
+/* =========================================================
    PREMIUM GIFT BOX
-===================================== */
+========================================================= */
 
+.gift-box {
+    position: relative;
 
-#page3 h2{
+    width: 230px;
+    height: 230px;
 
-    font-family:"Great Vibes",cursive;
+    cursor: pointer;
 
-    font-size:55px;
+    animation:
+        giftFloat 2s ease-in-out infinite;
 
-    color:#ffd6f5;
+    filter:
+        drop-shadow(
+            0 25px 40px
+            rgba(255,77,166,.35)
+        );
 
-    margin-bottom:50px;
-
+    transition:
+        transform .4s ease;
 }
 
+.gift-box:hover {
+    animation-play-state: paused;
 
-/* Gift Container */
-
-.gift-box{
-
-    width:230px;
-
-    height:230px;
-
-    position:relative;
-
-    cursor:pointer;
-
-    animation:giftFloat 2s ease-in-out infinite;
-
+    transform:
+        scale(1.08)
+        rotate(-2deg);
 }
 
+@keyframes giftFloat {
 
-
-@keyframes giftFloat{
-
-    0%,100%{
-
-        transform:translateY(0);
-
+    0%, 100% {
+        transform: translateY(0);
     }
 
-
-    50%{
-
-        transform:translateY(-20px);
-
+    50% {
+        transform: translateY(-18px);
     }
 
 }
-
 
 
 /* Gift Body */
 
-.gift-body{
+.gift-body {
+    position: absolute;
 
-    position:absolute;
+    bottom: 0;
+    left: 0;
 
-    bottom:0;
-
-    width:230px;
-
-    height:150px;
+    width: 230px;
+    height: 150px;
 
     background:
+        linear-gradient(
+            135deg,
+            #ff4da6,
+            #ff82c8
+        );
 
-    linear-gradient(
-        135deg,
-        #ff4da6,
-        #ff82c8
-    );
-
-
-    border-radius:15px;
+    border-radius: 15px;
 
     box-shadow:
-
-    0 25px 50px rgba(255,77,166,.5);
-
+        0 25px 50px
+        rgba(255,77,166,.5);
 }
 
 
+/* Gift Lid */
 
-/* Lid */
+.gift-lid {
+    position: absolute;
 
-.gift-lid{
+    top: 55px;
+    left: 0;
 
-    position:absolute;
-
-    top:55px;
-
-    width:230px;
-
-    height:45px;
-
+    width: 230px;
+    height: 45px;
 
     background:
+        linear-gradient(
+            135deg,
+            #ff8bd1,
+            #ff4da6
+        );
 
-    linear-gradient(
-        135deg,
-        #ff8bd1,
-        #ff4da6
-    );
+    border-radius: 12px;
 
+    z-index: 5;
 
-    border-radius:12px;
+    transform-origin:
+        left bottom;
 
-    z-index:5;
-
-
-    transform-origin:left bottom;
-
-
-    transition:1s;
-
+    transition:
+        1s ease;
 }
 
 
+/* Gift Ribbon */
 
-/* Ribbon */
+.gift-ribbon {
+    position: absolute;
 
-.gift-ribbon{
+    background: #fff;
 
-    position:absolute;
+    z-index: 6;
+}
 
-    background:#fff;
+.gift-ribbon.vertical {
+    width: 22px;
+    height: 230px;
 
-    z-index:6;
+    left: 104px;
+}
 
+.gift-ribbon.horizontal {
+    width: 230px;
+    height: 18px;
+
+    top: 70px;
 }
 
 
+/* Gift Bow */
 
-.vertical{
+.gift-bow {
+    position: absolute;
 
-    width:22px;
+    inset: 0;
 
-    height:230px;
+    z-index: 10;
 
-    left:104px;
-
+    pointer-events: none;
 }
 
+.gift-bow span {
+    position: absolute;
 
+    top: 25px;
 
-.horizontal{
+    width: 70px;
+    height: 50px;
 
-    width:230px;
+    background: #ffd700;
 
-    height:18px;
+    border-radius: 50%;
 
-    top:70px;
-
+    z-index: 10;
 }
 
-
-
-/* Bow */
-
-.gift-bow span{
-
-    position:absolute;
-
-    top:25px;
-
-    width:70px;
-
-    height:50px;
-
-    background:#ffd700;
-
-    border-radius:50%;
-
-    z-index:10;
-
-}
-
-
-
-.gift-bow span:first-child{
-
-    left:55px;
-
-    transform:rotate(-35deg);
-
-}
-
-
-
-.gift-bow span:last-child{
-
-    right:55px;
-
-    transform:rotate(35deg);
-
-}
-
-
-
-/* Open Animation */
-
-.gift-box.open .gift-lid{
+.gift-bow span:first-child {
+    left: 55px;
 
     transform:
+        rotate(-35deg);
+}
 
-    rotate(-35deg)
+.gift-bow span:last-child {
+    right: 55px;
 
-    translateY(-40px);
+    transform:
+        rotate(35deg);
+}
+
+
+/* Gift Open */
+
+.gift-box.open .gift-lid {
+    transform:
+        rotate(-35deg)
+        translateY(-40px);
+}
+
+
+/* Gift Hint */
+
+.gift-box::after {
+    content: "Click me 💖";
+
+    position: absolute;
+
+    bottom: -55px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 16px;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    50% {
+        opacity: .4;
+        transform: scale(1.08);
+    }
 
 }
 
 
+/* =========================================================
+   PAGE 4 - BIRTHDAY MESSAGE
+========================================================= */
 
-/* Click hint */
+#page4 {
+    min-height: 100vh;
 
-.gift-box::after{
-
-    content:"Click me 💖";
-
-    position:absolute;
-
-    bottom:-60px;
-
-    width:100%;
-
-    text-align:center;
-
-    color:white;
-
-    font-size:18px;
-
-    animation:pulse 1.5s infinite;
-
-}
-
-
-
-@keyframes pulse{
-
-50%{
-
-opacity:.4;
-
-transform:scale(1.1);
-
-}
-
-}
-
-/* =====================================
-   BIRTHDAY PAGE DESIGN
-===================================== */
-
-
-#page4{
+    padding:
+        80px 20px 130px;
 
     background:
+        radial-gradient(
+            circle at top,
+            rgba(255,107,181,.25),
+            transparent 40%
+        );
 
-    radial-gradient(
-        circle at top,
-        #ff6bb5,
-        transparent 40%
-    );
-
+    overflow: visible;
 }
 
+.birthday-card {
+    position: relative;
 
+    width: min(90%, 700px);
 
-/* Card */
+    padding:
+        60px 45px;
 
-
-.birthday-card{
-
-    width:min(90%,700px);
-
-    padding:60px 45px;
-
-    border-radius:35px;
+    border-radius: 35px;
 
     background:
+        rgba(255,255,255,.12);
 
-    rgba(255,255,255,.12);
+    backdrop-filter:
+        blur(25px);
 
-
-    backdrop-filter:blur(25px);
-
+    -webkit-backdrop-filter:
+        blur(25px);
 
     border:
-
-    1px solid rgba(255,255,255,.25);
-
+        1px solid rgba(255,255,255,.25);
 
     box-shadow:
+        0 30px 80px rgba(0,0,0,.4),
+        inset 0 0 40px rgba(255,255,255,.05);
 
-    0 30px 80px rgba(0,0,0,.4);
+    text-align: center;
 
+    overflow: hidden;
+}
 
-    text-align:center;
+.birthday-card::before {
+    content: "❤️";
 
-    position:relative;
+    position: absolute;
 
-    overflow:hidden;
+    top: 20px;
+    left: 30px;
 
+    font-size: 42px;
+
+    animation:
+        heartMove 3s infinite;
+}
+
+.birthday-card::after {
+    content: "💖";
+
+    position: absolute;
+
+    bottom: 20px;
+    right: 30px;
+
+    font-size: 42px;
+
+    animation:
+        heartMove 3s infinite reverse;
+}
+
+@keyframes heartMove {
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(15deg);
+    }
 
 }
 
+.birthday-card h1 {
+    position: relative;
+    z-index: 2;
 
+    font-family:
+        "Great Vibes",
+        cursive;
 
-/* Title */
+    font-size:
+        clamp(55px, 9vw, 80px);
 
+    font-weight: 400;
 
-.birthday-card h1{
-
-
-    font-family:"Great Vibes",cursive;
-
-
-    font-size:80px;
-
+    line-height: 1;
 
     background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffd1ec,
+            #ff6bb5
+        );
 
-    linear-gradient(
-        90deg,
-        #fff,
-        #ffd1ec,
-        #ff6bb5
-    );
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+
+    from {
+        filter:
+            drop-shadow(
+                0 0 5px #ff8dcc
+            );
+    }
+
+    to {
+        filter:
+            drop-shadow(
+                0 0 25px #ff4da6
+            );
+    }
+
+}
+
+.birthday-card h2 {
+    position: relative;
+    z-index: 2;
+
+    font-size:
+        clamp(25px, 5vw, 35px);
+
+    color: #ffe1f2;
+
+    margin-top: 15px;
+}
+
+.divider {
+    position: relative;
+    z-index: 2;
+
+    margin: 25px 0;
+
+    font-size: 23px;
+
+    color: #ffd1ec;
+
+    letter-spacing: 6px;
+}
+
+#typing {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    min-height: 180px;
+
+    margin:
+        0 auto 20px;
+
+    font-size:
+        clamp(15px, 2.5vw, 19px);
+
+    line-height: 1.9;
+
+    color: #fff;
+
+    word-wrap: break-word;
+}
+
+#page4 .nextBtn {
+    position: relative;
+
+    z-index: 50;
+
+    margin-top: 15px;
+}
 
 
-    -webkit-background-clip:text;
+/* =========================================================
+   STARS ON BIRTHDAY CARD
+========================================================= */
 
-    color:transparent;
+.stars {
+    position: absolute;
 
+    inset: 0;
 
-    animation:titleGlow 2s infinite alternate;
+    pointer-events: none;
 
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    opacity: .25;
+
+    animation:
+        starsMove 20s linear infinite;
+}
+
+@keyframes starsMove {
+
+    from {
+        background-position:
+            0 0;
+    }
+
+    to {
+        background-position:
+            200px 400px;
+    }
 
 }
 
 
-
-@keyframes titleGlow{
-
-
-from{
-
-filter:drop-shadow(0 0 5px #ff8dcc);
-
-}
-
-
-to{
-
-filter:drop-shadow(0 0 30px #ff4da6);
-
-}
-
-
-}
-
-
-
-.birthday-card h2{
-
-
-    font-size:35px;
-
-    color:#ffe1f2;
-
-    margin-top:15px;
-
-}
-
-
-
-/* Divider */
-
-
-.divider{
-
-    margin:25px;
-
-    font-size:25px;
-
-}
-
-
-
-/* Message */
-
-
-#typing{
-
-    min-height:150px;
-
-    font-size:20px;
-
-    line-height:2;
-
-    color:#fff;
-
-}
-
-
-
-/* Floating hearts */
-
-
-.birthday-card::before{
-
-content:"❤️";
-
-position:absolute;
-
-font-size:50px;
-
-top:20px;
-
-left:30px;
-
-animation:heartMove 3s infinite;
-
-}
-
-
-.birthday-card::after{
-
-content:"💖";
-
-position:absolute;
-
-font-size:50px;
-
-bottom:20px;
-
-right:30px;
-
-animation:heartMove 3s infinite reverse;
-
-}
-
-
-@keyframes heartMove{
-
-
-50%{
-
-transform:translateY(-25px) rotate(20deg);
-
-}
-
-
-}
-
-
-
-/* Stars */
-
-.stars{
-
-position:absolute;
-
-inset:0;
-
-pointer-events:none;
-
-background-image:
-
-radial-gradient(
-white 1px,
-transparent 1px
-);
-
-
-background-size:40px 40px;
-
-
-opacity:.3;
-
-
-animation:starsMove 20s linear infinite;
-
-}
-
-
-@keyframes starsMove{
-
-from{
-
-background-position:0 0;
-
-}
-
-to{
-
-background-position:200px 400px;
-
-}
-
-}
-
-/* =====================================
-   MEMORY PAGE
-===================================== */
+/* =========================================================
+   PAGE 5 - MEMORIES
+========================================================= */
 
 #page5 {
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 50px 20px;
+    align-items: flex-start;
+
+    min-height: 100vh;
+
+    padding:
+        70px 20px 120px;
+
+    overflow: visible;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,80,170,.12),
+            transparent 40%
+        );
 }
 
 .memory-page {
     width: min(1100px, 100%);
+
     text-align: center;
-    padding: 30px 0;
 }
 
 .memory-small-title {
-    font-size: 13px;
+    font-size: 12px;
+
     letter-spacing: 5px;
+
     color: #ffb9df;
+
     font-weight: 600;
+
     margin-bottom: 10px;
 }
 
 .memory-title {
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(55px, 7vw, 85px);
-    margin: 0;
+    font-family:
+        "Great Vibes",
+        cursive;
 
-    background: linear-gradient(
-        90deg,
-        #ffffff,
-        #ffd0ec,
-        #ff78be
-    );
+    font-size:
+        clamp(55px, 8vw, 80px);
 
-    -webkit-background-clip: text;
-    color: transparent;
+    font-weight: 400;
 
-    filter: drop-shadow(0 10px 25px rgba(255, 77, 166, .3));
+    line-height: 1;
+
+    color: #ffd5f5;
 }
 
 .memory-subtitle {
-    color: rgba(255,255,255,.75);
-    font-size: 17px;
-    margin: 8px 0 35px;
+    color: #dfc9dc;
+
+    font-size: 15px;
+
+    margin:
+        12px 0 40px;
 }
 
-/* =====================================
-   PHOTO GRID
-===================================== */
+
+/* =========================================================
+   MEMORY GRID
+========================================================= */
 
 .memory-grid {
+    width: 100%;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    align-items: center;
-    margin-bottom: 25px;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+
+    margin-bottom: 40px;
 }
 
 .memory-photo {
     position: relative;
-    padding: 12px 12px 38px;
 
-    background: #fff;
+    padding:
+        10px 10px 40px;
+
+    background:
+        #fff;
+
+    border-radius: 6px;
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.35);
+        0 15px 40px
+        rgba(0,0,0,.35);
 
     transition:
-        transform .5s ease,
-        box-shadow .5s ease;
+        transform .45s ease,
+        box-shadow .45s ease;
 
-    cursor: pointer;
+    transform:
+        rotate(-1deg);
 }
 
-.memory-photo:nth-child(1) {
-    transform: rotate(-4deg);
+.memory-photo:nth-child(even) {
+    transform:
+        rotate(1deg);
 }
-
-.memory-photo:nth-child(2) {
-    transform: rotate(3deg);
-}
-
-.memory-photo:nth-child(3) {
-    transform: rotate(-2deg);
-}
-
-.memory-photo:nth-child(4) {
-    transform: rotate(3deg);
-}
-
-.memory-photo:nth-child(5) {
-    transform: rotate(-3deg);
-}
-
-.memory-photo:nth-child(6) {
-    transform: rotate(2deg);
-}
-
-/* Hover */
 
 .memory-photo:hover {
     transform:
-        rotate(0deg)
-        translateY(-15px)
-        scale(1.06);
+        translateY(-12px)
+        scale(1.04)
+        rotate(0deg);
 
     z-index: 10;
 
     box-shadow:
-        0 30px 70px rgba(255, 77, 166, .35);
+        0 30px 70px
+        rgba(255,77,166,.35);
 }
-
-/* =====================================
-   IMAGE
-===================================== */
 
 .photo-frame {
     width: 100%;
+
     aspect-ratio: 1 / 1;
 
     overflow: hidden;
@@ -1623,117 +1062,99 @@ background-position:200px 400px;
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
-
     display: block;
 
-    transition: transform .6s ease;
+    object-fit: cover;
+
+    transition:
+        transform .6s ease;
 }
 
 .memory-photo:hover img {
     transform: scale(1.08);
 }
 
-/* Caption */
-
 .memory-photo p {
     position: absolute;
 
-    bottom: 7px;
     left: 0;
     right: 0;
+
+    bottom: 8px;
 
     margin: 0;
 
     color: #444;
 
-    font-family: "Great Vibes", cursive;
+    font-family:
+        "Great Vibes",
+        cursive;
 
-    font-size: 23px;
+    font-size: 22px;
 }
-
-/* =====================================
-   MEMORY BUTTON
-===================================== */
 
 .memory-next {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-/* =====================================
-   MOBILE
-===================================== */
 
-@media (max-width: 800px) {
-
-    .memory-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-    }
-
-}
-
-@media (max-width: 520px) {
-
-    #page5 {
-        padding-top: 30px;
-    }
-
-    .memory-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-    }
-
-    .memory-photo {
-        padding: 7px 7px 30px;
-    }
-
-    .memory-photo p {
-        font-size: 17px;
-    }
-
-    .memory-subtitle {
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
-
-}
-
-/* =====================================
-   LETTER PAGE
-===================================== */
+/* =========================================================
+   PAGE 6 - LETTER
+========================================================= */
 
 #page6 {
-    overflow: hidden;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding:
+        70px 20px 140px;
+
+    overflow: visible;
+
     background:
         radial-gradient(
             circle at 20% 20%,
-            rgba(255, 85, 170, .18),
+            rgba(255,85,170,.18),
             transparent 35%
         ),
+
         radial-gradient(
             circle at 80% 80%,
-            rgba(155, 92, 255, .18),
+            rgba(155,92,255,.18),
             transparent 35%
         );
 }
 
 .letter-page {
     width: min(900px, 95%);
+
     text-align: center;
 }
 
 .letter-label {
     color: #ffb7df;
-    font-size: 13px;
+
+    font-size: 12px;
+
     letter-spacing: 4px;
+
     font-weight: 600;
+
     margin-bottom: 8px;
 }
 
 .letter-heading {
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(50px, 7vw, 75px);
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(50px, 8vw, 75px);
+
+    font-weight: 400;
+
+    line-height: 1;
 
     background:
         linear-gradient(
@@ -1744,142 +1165,149 @@ background-position:200px 400px;
         );
 
     -webkit-background-clip: text;
+    background-clip: text;
+
     color: transparent;
 
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
-/* =====================================
+
+/* =========================================================
    ENVELOPE
-===================================== */
+========================================================= */
 
 .envelope-wrapper {
+    position: relative;
+
     width: 360px;
     height: 250px;
-    margin: auto;
+
+    max-width: 90vw;
+
+    margin: 0 auto;
+
     perspective: 1200px;
+
     cursor: pointer;
 }
 
 .envelope {
+    position: relative;
+
     width: 100%;
     height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-}
 
-/* Envelope back */
+    transform-style:
+        preserve-3d;
+}
 
 .envelope-back {
     position: absolute;
+
     inset: 0;
 
     background:
         linear-gradient(
             135deg,
-            #ff72b9,
-            #d93c8f
+            #ff4da6,
+            #d92182
         );
 
     border-radius: 10px;
 
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.4);
-
     z-index: 1;
 }
-
-/* Letter */
 
 .letter-paper {
     position: absolute;
 
-    width: 92%;
-    height: 225px;
+    left: 5%;
+    top: 5%;
 
-    left: 4%;
-    top: 15px;
+    width: 90%;
+    height: 90%;
 
-    background: #fffafc;
+    background:
+        #fffafc;
+
+    color:
+        #4a1738;
 
     border-radius: 5px;
 
-    color: #3c2632;
+    padding: 25px;
 
     z-index: 2;
 
-    transition:
-        transform 1.2s cubic-bezier(.2,.8,.2,1),
-        top 1.2s cubic-bezier(.2,.8,.2,1);
-
     overflow: hidden;
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.2);
+    transition:
+        transform .9s ease;
 }
 
 .letter-content {
-    padding: 25px 28px;
-
     text-align: left;
 
-    overflow-y: auto;
+    font-size: 12px;
 
-    height: 100%;
+    line-height: 1.7;
 }
 
 .letter-content h2 {
-    font-family: "Great Vibes", cursive;
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    color: #d62a83;
+
     font-size: 32px;
-    color: #d83d89;
-    margin-bottom: 10px;
+
+    margin-bottom: 12px;
 }
 
 .letter-content p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    line-height: 1.7;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .letter-ending {
-    font-family: "Great Vibes", cursive !important;
-    font-size: 20px !important;
-    color: #d83d89;
-}
+    color: #d62a83;
 
-/* =====================================
-   FRONT
-===================================== */
+    font-size: 16px;
+
+    font-weight: 600;
+}
 
 .envelope-front {
     position: absolute;
-    inset: 0;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 62%;
+
+    z-index: 5;
 
     background:
         linear-gradient(
             145deg,
-            #ff8bc7,
-            #e64796
+            #f83e9a,
+            #d32182
         );
 
     clip-path:
         polygon(
             0 0,
-            50% 55%,
+            50% 60%,
             100% 0,
             100% 100%,
             0 100%
         );
 
-    border-radius: 10px;
-
-    z-index: 4;
+    border-radius:
+        0 0 10px 10px;
 }
-
-/* =====================================
-   FLAP
-===================================== */
 
 .envelope-flap {
     position: absolute;
@@ -1890,210 +1318,172 @@ background-position:200px 400px;
     width: 100%;
     height: 58%;
 
+    z-index: 6;
+
     background:
         linear-gradient(
-            145deg,
-            #ff9bd0,
-            #e9519c
+            135deg,
+            #ff75ba,
+            #ed3a97
         );
 
     clip-path:
         polygon(
             0 0,
-            50% 100%,
-            100% 0
+            100% 0,
+            50% 100%
         );
 
-    transform-origin: top center;
+    transform-origin:
+        top center;
 
     transition:
-        transform 1s cubic-bezier(.2,.8,.2,1);
-
-    z-index: 6;
+        transform .9s ease;
 }
-
-/* =====================================
-   HEART SEAL
-===================================== */
 
 .heart-seal {
     position: absolute;
 
     left: 50%;
-    top: 48%;
+    top: 50%;
 
     transform:
         translate(-50%, -50%);
 
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
 
-    border-radius: 50%;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     background: #fff;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 22px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.2);
+    border-radius: 50%;
 
     z-index: 10;
 
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.2);
+
     transition:
-        opacity .4s,
-        transform .5s;
+        opacity .4s ease;
 }
 
-/* =====================================
-   OPEN ENVELOPE
-===================================== */
+
+/* Envelope Open */
 
 .envelope-wrapper.open
 .envelope-flap {
-
     transform:
         rotateX(180deg);
-
 }
 
 .envelope-wrapper.open
 .letter-paper {
-
-    top: -210px;
-
     transform:
-        scale(1.05);
-
-    z-index: 8;
-
+        translateY(-100px);
 }
 
 .envelope-wrapper.open
 .heart-seal {
-
     opacity: 0;
-
-    transform:
-        translate(-50%, -50%)
-        scale(0);
 }
-
-/* =====================================
-   HINT
-===================================== */
 
 .envelope-hint {
-    margin-top: 25px;
+    margin-top: 30px;
 
-    color: rgba(255,255,255,.75);
+    color: #d9bdd5;
 
-    font-size: 15px;
-
-    animation:
-        hintPulse 1.8s infinite;
+    font-size: 13px;
 }
-
-@keyframes hintPulse {
-
-    50% {
-        opacity: .4;
-    }
-
-}
-
-/* =====================================
-   NEXT BUTTON
-===================================== */
 
 .letter-next {
+    margin-top: 25px;
+
     opacity: 0;
+
     pointer-events: none;
 
+    transform:
+        translateY(10px);
+
     transition:
-        opacity .6s,
-        transform .6s;
+        opacity .5s ease,
+        transform .5s ease;
 }
 
 .letter-next.show {
     opacity: 1;
+
     pointer-events: auto;
+
+    transform:
+        translateY(0);
 }
 
-/* =====================================
-   MOBILE
-===================================== */
 
-@media (max-width: 500px) {
-
-    .envelope-wrapper {
-        width: 300px;
-        height: 210px;
-    }
-
-    .letter-paper {
-        height: 190px;
-    }
-
-    .letter-content {
-        padding: 20px;
-    }
-
-    .letter-content h2 {
-        font-size: 27px;
-    }
-
-    .letter-content p {
-        font-size: 9px;
-    }
-
-    .letter-ending {
-        font-size: 17px !important;
-    }
-
-}
-
-/* =====================================
-   BIRTHDAY CAKE PAGE
-===================================== */
+/* =========================================================
+   PAGE 7 - CAKE
+========================================================= */
 
 #page7 {
-    overflow: hidden;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding:
+        70px 20px 140px;
+
+    overflow: visible;
 
     background:
         radial-gradient(
             circle at 50% 45%,
-            rgba(255, 76, 166, .18),
+            rgba(255,76,166,.18),
             transparent 35%
         ),
+
         radial-gradient(
             circle at 20% 20%,
-            rgba(155, 92, 255, .15),
+            rgba(155,92,255,.15),
             transparent 30%
         );
 }
 
 .cake-page {
-    width: min(900px, 95%);
-    text-align: center;
     position: relative;
+
+    width: min(900px, 95%);
+
+    text-align: center;
 }
 
 .wish-label {
     color: #ffb9df;
-    font-size: 13px;
+
+    font-size: 12px;
+
     letter-spacing: 5px;
+
     font-weight: 600;
+
     margin-bottom: 5px;
 }
 
 .wish-title {
-    font-family: "Great Vibes", cursive;
+    font-family:
+        "Great Vibes",
+        cursive;
 
-    font-size: clamp(60px, 8vw, 90px);
+    font-size:
+        clamp(60px, 8vw, 90px);
+
+    font-weight: 400;
+
+    line-height: 1;
 
     margin: 0;
 
@@ -2106,23 +1496,30 @@ background-position:200px 400px;
         );
 
     -webkit-background-clip: text;
+    background-clip: text;
+
     color: transparent;
 
     filter:
         drop-shadow(
-            0 0 25px rgba(255, 82, 171, .45)
+            0 0 25px
+            rgba(255,82,171,.45)
         );
 }
 
 .wish-subtitle {
-    color: rgba(255,255,255,.75);
-    font-size: 16px;
-    margin-top: 5px;
+    color:
+        rgba(255,255,255,.75);
+
+    font-size: 15px;
+
+    margin-top: 10px;
 }
 
-/* =====================================
+
+/* =========================================================
    CAKE SCENE
-===================================== */
+========================================================= */
 
 .cake-scene {
     position: relative;
@@ -2130,14 +1527,17 @@ background-position:200px 400px;
     width: 360px;
     height: 310px;
 
-    margin: 20px auto 5px;
+    max-width: 95vw;
+
+    margin:
+        30px auto 10px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: flex-end;
 }
-
-/* Glow behind cake */
 
 .cake-glow {
     position: absolute;
@@ -2152,13 +1552,14 @@ background-position:200px 400px;
     background:
         radial-gradient(
             circle,
-            rgba(255, 92, 175, .35),
+            rgba(255,92,175,.35),
             transparent 70%
         );
 
     filter: blur(20px);
 
-    animation: cakeGlow 2s ease-in-out infinite;
+    animation:
+        cakeGlow 2s ease-in-out infinite;
 }
 
 @keyframes cakeGlow {
@@ -2172,11 +1573,13 @@ background-position:200px 400px;
         transform: scale(1.1);
         opacity: 1;
     }
+
 }
 
-/* =====================================
+
+/* =========================================================
    CAKE
-===================================== */
+========================================================= */
 
 .cake {
     position: relative;
@@ -2187,9 +1590,10 @@ background-position:200px 400px;
     z-index: 2;
 }
 
-/* =====================================
+
+/* =========================================================
    CANDLE
-===================================== */
+========================================================= */
 
 .candle {
     position: absolute;
@@ -2200,7 +1604,8 @@ background-position:200px 400px;
     left: 50%;
     top: 5px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     border-radius: 7px;
 
@@ -2214,7 +1619,8 @@ background-position:200px 400px;
         );
 
     box-shadow:
-        0 4px 15px rgba(255,255,255,.25);
+        0 4px 15px
+        rgba(255,255,255,.25);
 
     z-index: 8;
 }
@@ -2232,7 +1638,8 @@ background-position:200px 400px;
     top: -8px;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     border-radius: 4px;
 }
@@ -2241,9 +1648,10 @@ background-position:200px 400px;
     display: none;
 }
 
-/* =====================================
+
+/* =========================================================
    FLAME
-===================================== */
+========================================================= */
 
 #flame {
     position: absolute;
@@ -2254,11 +1662,13 @@ background-position:200px 400px;
     left: 50%;
     top: -48px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     border-radius:
         50% 50% 50% 50%
-        / 65% 65% 35% 35%;
+        /
+        65% 65% 35% 35%;
 
     background:
         radial-gradient(
@@ -2272,9 +1682,10 @@ background-position:200px 400px;
     box-shadow:
         0 0 12px #ffd84d,
         0 0 30px #ff9d00,
-        0 0 55px rgba(255, 157, 0, .6);
+        0 0 55px rgba(255,157,0,.6);
 
-    transform-origin: bottom center;
+    transform-origin:
+        bottom center;
 
     animation:
         flameMove .15s infinite alternate;
@@ -2289,13 +1700,14 @@ background-position:200px 400px;
     left: 50%;
     bottom: 5px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
+
+    background: #fff;
 
     border-radius: 50%;
 
-    background: white;
-
-    filter: blur(1px);
+    opacity: .9;
 }
 
 @keyframes flameMove {
@@ -2304,171 +1716,214 @@ background-position:200px 400px;
         transform:
             translateX(-50%)
             rotate(-3deg)
-            scaleY(1);
+            scale(1);
     }
 
     to {
         transform:
             translateX(-50%)
             rotate(3deg)
-            scaleY(1.08);
+            scale(1.08);
     }
+
 }
 
-/* =====================================
+#flame.blown {
+    animation:
+        blowOut .6s forwards;
+}
+
+@keyframes blowOut {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateX(35px)
+            scale(.1);
+    }
+
+}
+
+
+/* =========================================================
    CAKE TOP
-===================================== */
+========================================================= */
 
 .cake-top {
     position: absolute;
 
+    top: 70px;
+
+    left: 0;
+
     width: 280px;
     height: 55px;
-
-    top: 80px;
 
     border-radius: 50%;
 
     background:
         linear-gradient(
-            180deg,
-            #fff4fa,
-            #ffc9e4
+            #fff,
+            #ffc8e7
         );
 
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.25);
-
-    z-index: 5;
+    z-index: 3;
 }
-
-/* icing drips */
 
 .icing-drip {
     position: absolute;
 
-    width: 35px;
+    bottom: -18px;
+
+    width: 30px;
     height: 30px;
 
-    background: #fff1f8;
+    background: #ffc8e7;
 
     border-radius:
         0 0 20px 20px;
 }
 
 .drip-1 {
-    left: 35px;
-    top: 30px;
+    left: 45px;
 }
 
 .drip-2 {
     left: 105px;
-    top: 32px;
+
+    height: 40px;
 }
 
 .drip-3 {
-    right: 95px;
-    top: 28px;
+    left: 165px;
 }
 
 .drip-4 {
-    right: 30px;
-    top: 32px;
+    left: 225px;
+
+    height: 35px;
 }
 
-/* =====================================
+
+/* =========================================================
    CAKE BODY
-===================================== */
+========================================================= */
 
 .cake-body {
     position: absolute;
 
-    width: 260px;
-    height: 115px;
-
-    left: 10px;
     top: 105px;
-
-    border-radius:
-        0 0 22px 22px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            90deg,
-            #e94b96,
-            #ff75b8,
-            #e94b96
-        );
-
-    box-shadow:
-        inset 0 -15px 20px rgba(0,0,0,.12),
-        0 15px 25px rgba(0,0,0,.25);
-
-    z-index: 3;
-}
-
-.cake-layer {
-    position: absolute;
 
     left: 0;
 
-    width: 100%;
+    width: 280px;
+    height: 110px;
 
-    height: 25px;
+    border-radius:
+        0 0 25px 25px;
 
     background:
-        repeating-linear-gradient(
-            90deg,
-            #fff,
-            #fff 12px,
-            #ffd8eb 12px,
-            #ffd8eb 24px
+        linear-gradient(
+            180deg,
+            #ff77bc,
+            #e93291
         );
 
-    opacity: .9;
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+.cake-layer {
+    width: 100%;
+    height: 50%;
 }
 
 .layer-one {
-    top: 25px;
+    border-bottom:
+        7px solid rgba(255,255,255,.35);
 }
 
 .layer-two {
-    top: 75px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.08),
+            transparent
+        );
 }
 
-/* =====================================
+
+/* =========================================================
    CAKE PLATE
-===================================== */
+========================================================= */
 
 .cake-plate {
     position: absolute;
 
-    width: 320px;
-    height: 25px;
-
     bottom: 0;
-    left: -20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 330px;
+    height: 30px;
 
     border-radius: 50%;
 
     background:
         linear-gradient(
-            180deg,
-            #ffffff,
-            #dcd6e2
+            #fff,
+            #e8d8eb
         );
 
     box-shadow:
-        0 15px 25px rgba(0,0,0,.3);
+        0 10px 25px
+        rgba(0,0,0,.4);
 
     z-index: 1;
 }
 
-/* =====================================
-   SPARKLES
-===================================== */
+
+/* =========================================================
+   BLOW BUTTON
+========================================================= */
+
+.blow-button {
+    min-width: 230px;
+
+    margin-top: 15px;
+}
+
+.blow-button span {
+    margin-right: 8px;
+}
+
+.blow-hint {
+    color:
+        rgba(255,255,255,.55);
+
+    font-size: 13px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   CAKE SPARKLES
+========================================================= */
 
 .cake-sparkle {
     position: absolute;
@@ -2479,6 +1934,8 @@ background-position:200px 400px;
 
     animation:
         sparkleFloat 2s ease-in-out infinite;
+
+    pointer-events: none;
 }
 
 .sparkle-1 {
@@ -2489,18 +1946,21 @@ background-position:200px 400px;
 .sparkle-2 {
     right: 15%;
     top: 45%;
+
     animation-delay: .4s;
 }
 
 .sparkle-3 {
     left: 25%;
     top: 65%;
+
     animation-delay: .8s;
 }
 
 .sparkle-4 {
     right: 25%;
     top: 65%;
+
     animation-delay: 1.2s;
 }
 
@@ -2508,99 +1968,41 @@ background-position:200px 400px;
 
     0%, 100% {
         opacity: .2;
-        transform: scale(.7) rotate(0);
+
+        transform:
+            scale(.7)
+            rotate(0);
     }
 
     50% {
         opacity: 1;
-        transform: scale(1.3) rotate(180deg);
+
+        transform:
+            scale(1.3)
+            rotate(180deg);
+
         text-shadow:
             0 0 20px white;
     }
-}
-
-/* =====================================
-   BLOW BUTTON
-===================================== */
-
-.blow-button {
-    margin-top: 5px !important;
-
-    min-width: 230px;
-
-    position: relative;
-}
-
-.blow-button span {
-    margin-right: 8px;
-}
-
-.blow-hint {
-    color: rgba(255,255,255,.55);
-    font-size: 13px;
-    margin-top: 12px;
-}
-
-/* =====================================
-   CANDLE BLOWN OUT
-===================================== */
-
-#flame.blown {
-    animation: blowOut .6s forwards;
-}
-
-@keyframes blowOut {
-
-    0% {
-        opacity: 1;
-        transform:
-            translateX(-50%)
-            scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-            translateX(-50%)
-            translateX(35px)
-            scale(.1);
-    }
-}
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media (max-width: 500px) {
-
-    .cake-scene {
-        transform: scale(.82);
-        margin-top: 5px;
-        margin-bottom: -20px;
-    }
-
-    .wish-title {
-        font-size: 60px;
-    }
-
-    .wish-subtitle {
-        font-size: 13px;
-    }
-
-    .blow-button {
-        margin-top: 0 !important;
-    }
 
 }
 
-/* =====================================
-   FINAL SURPRISE PAGE
-===================================== */
+
+/* =========================================================
+   PAGE 8 - FINAL SURPRISE
+========================================================= */
 
 #page8 {
     position: relative;
 
-    overflow: hidden;
+    min-height: 100vh;
+
+    align-items: center;
+
+    padding:
+        80px 20px 150px;
+
+    overflow: visible;
 
     background:
         radial-gradient(
@@ -2611,12 +2013,14 @@ background-position:200px 400px;
         );
 }
 
-/* =====================================
-   STARS
-===================================== */
+
+/* =========================================================
+   FINAL STARS
+========================================================= */
 
 .final-stars {
     position: absolute;
+
     inset: 0;
 
     background-image:
@@ -2649,16 +2053,21 @@ background-position:200px 400px;
 
 }
 
-/* =====================================
+
+/* =========================================================
    FINAL CARD
-===================================== */
+========================================================= */
 
 .final-card {
     position: relative;
 
-    width: min(680px, 90%);
+    width: min(680px, 92%);
 
-    padding: 50px 45px;
+    padding:
+        55px 45px;
+
+    margin:
+        20px auto;
 
     text-align: center;
 
@@ -2677,20 +2086,29 @@ background-position:200px 400px;
     backdrop-filter:
         blur(25px);
 
+    -webkit-backdrop-filter:
+        blur(25px);
+
     box-shadow:
-        0 30px 100px rgba(0,0,0,.55),
-        inset 0 0 40px rgba(255,255,255,.04);
+        0 30px 100px
+        rgba(0,0,0,.55),
+
+        inset 0 0 40px
+        rgba(255,255,255,.04);
 
     z-index: 10;
 
     animation:
         finalCardAppear 1.5s ease forwards;
+
+    overflow: visible;
 }
 
 @keyframes finalCardAppear {
 
     from {
         opacity: 0;
+
         transform:
             translateY(50px)
             scale(.9);
@@ -2698,6 +2116,7 @@ background-position:200px 400px;
 
     to {
         opacity: 1;
+
         transform:
             translateY(0)
             scale(1);
@@ -2705,9 +2124,10 @@ background-position:200px 400px;
 
 }
 
-/* =====================================
+
+/* =========================================================
    CROWN
-===================================== */
+========================================================= */
 
 .final-crown {
     font-size: 45px;
@@ -2728,9 +2148,10 @@ background-position:200px 400px;
 
 }
 
-/* =====================================
-   SMALL TEXT
-===================================== */
+
+/* =========================================================
+   FINAL SMALL TEXT
+========================================================= */
 
 .final-small {
     font-size: 11px;
@@ -2744,9 +2165,10 @@ background-position:200px 400px;
     margin-bottom: 5px;
 }
 
-/* =====================================
-   MAIN TITLE
-===================================== */
+
+/* =========================================================
+   FINAL TITLE
+========================================================= */
 
 .final-title {
     font-family:
@@ -2755,6 +2177,8 @@ background-position:200px 400px;
 
     font-size:
         clamp(65px, 9vw, 100px);
+
+    font-weight: 400;
 
     line-height: 1;
 
@@ -2773,6 +2197,7 @@ background-position:200px 400px;
         250% auto;
 
     -webkit-background-clip: text;
+    background-clip: text;
 
     color: transparent;
 
@@ -2795,9 +2220,10 @@ background-position:200px 400px;
 
 }
 
-/* =====================================
-   NAME
-===================================== */
+
+/* =========================================================
+   FINAL NAME
+========================================================= */
 
 .final-name {
     font-family:
@@ -2806,6 +2232,8 @@ background-position:200px 400px;
 
     font-size:
         clamp(40px, 6vw, 60px);
+
+    font-weight: 400;
 
     color: #fff;
 
@@ -2830,9 +2258,10 @@ background-position:200px 400px;
 
 }
 
-/* =====================================
-   DIVIDER
-===================================== */
+
+/* =========================================================
+   FINAL DIVIDER
+========================================================= */
 
 .final-divider {
     color: #ffacd9;
@@ -2845,9 +2274,10 @@ background-position:200px 400px;
     letter-spacing: 3px;
 }
 
-/* =====================================
-   MESSAGE
-===================================== */
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
 
 .final-message {
     color:
@@ -2863,19 +2293,18 @@ background-position:200px 400px;
     max-width: 560px;
 }
 
-/* =====================================
+
+/* =========================================================
    FINAL WISH
-===================================== */
+========================================================= */
 
 .final-wish {
-    display:
-        inline-block;
+    display: inline-block;
 
     padding:
         10px 20px;
 
-    border-radius:
-        50px;
+    border-radius: 50px;
 
     background:
         rgba(255,255,255,.08);
@@ -2896,9 +2325,10 @@ background-position:200px 400px;
     margin-bottom: 10px;
 }
 
-/* =====================================
-   REPLAY BUTTON
-===================================== */
+
+/* =========================================================
+   REPLAY
+========================================================= */
 
 .replay-button {
     display: block;
@@ -2927,11 +2357,9 @@ background-position:200px 400px;
 
     transition:
         .4s ease;
-
 }
 
 .replay-button:hover {
-
     transform:
         translateY(-5px)
         scale(1.05);
@@ -2942,12 +2370,12 @@ background-position:200px 400px;
     box-shadow:
         0 15px 35px
         rgba(255,77,166,.3);
-
 }
 
-/* =====================================
-   FLOATING HEARTS
-===================================== */
+
+/* =========================================================
+   FINAL FLOATING HEARTS
+========================================================= */
 
 .final-heart {
     position: absolute;
@@ -2971,32 +2399,28 @@ background-position:200px 400px;
     right: 10%;
     top: 18%;
 
-    animation-delay:
-        1s;
+    animation-delay: 1s;
 }
 
 .heart-3 {
     left: 13%;
     bottom: 20%;
 
-    animation-delay:
-        2s;
+    animation-delay: 2s;
 }
 
 .heart-4 {
     right: 12%;
     bottom: 18%;
 
-    animation-delay:
-        3s;
+    animation-delay: 3s;
 }
 
 .heart-5 {
     left: 50%;
     top: 8%;
 
-    animation-delay:
-        1.5s;
+    animation-delay: 1.5s;
 }
 
 @keyframes heartFloat {
@@ -3015,9 +2439,10 @@ background-position:200px 400px;
 
 }
 
-/* =====================================
+
+/* =========================================================
    FIREWORKS
-===================================== */
+========================================================= */
 
 .firework {
     position: absolute;
@@ -3057,31 +2482,28 @@ background-position:200px 400px;
     left: 18%;
     top: 20%;
 
-    animation-delay:
-        0s;
+    animation-delay: 0s;
 }
 
 .firework-2 {
     right: 20%;
     top: 25%;
 
-    animation-delay:
-        1s;
+    animation-delay: 1s;
 }
 
 .firework-3 {
     right: 10%;
     bottom: 20%;
 
-    animation-delay:
-        2s;
+    animation-delay: 2s;
 }
 
 @keyframes fireworkBurst {
 
-    0%,
-    70% {
+    0%, 70% {
         opacity: 0;
+
         transform:
             scale(.2);
     }
@@ -3092,36 +2514,477 @@ background-position:200px 400px;
 
     90% {
         opacity: .8;
+
         transform:
             scale(1.5);
     }
 
     100% {
         opacity: 0;
+
         transform:
             scale(2);
     }
 
 }
 
-/* =====================================
+
+/* =========================================================
+   GLOBAL FLOATING HEARTS
+========================================================= */
+
+body::before,
+body::after {
+    content: "❤️";
+
+    position: fixed;
+
+    font-size: 30px;
+
+    opacity: .35;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        bodyHeartFloat 12s linear infinite;
+}
+
+body::before {
+    left: 8%;
+}
+
+body::after {
+    right: 10%;
+
+    animation-delay:
+        6s;
+}
+
+@keyframes bodyHeartFloat {
+
+    0% {
+        transform:
+            translateY(100vh)
+            rotate(0);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .6;
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        #090014;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #ff4db8,
+            #9b5cff
+        );
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        #ff70c4;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .page {
+        padding:
+            65px 20px 100px;
+    }
+
+    .glass-card {
+        width: min(92%, 600px);
+
+        padding:
+            50px 35px;
+    }
+
+    .birthday-card {
+        width: min(94%, 700px);
+
+        padding:
+            50px 30px;
+    }
+
+    .memory-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 22px;
+    }
+
+    .final-card {
+        width: min(92%, 680px);
+    }
+
+}
+
+
+/* =========================================================
    MOBILE
-===================================== */
+========================================================= */
 
 @media (max-width: 600px) {
 
-    .final-card {
+    .page {
+        min-height: 100vh;
+
         padding:
-            35px 22px;
+            55px 15px 100px;
+
+        justify-content:
+            flex-start;
+
+        padding-top:
+            80px;
+    }
+
+
+    /* Page 1 */
+
+    #page1 {
+        justify-content: center;
+
+        padding-top: 40px;
+    }
+
+    .glass-card {
+        width: 94%;
+
+        padding:
+            40px 22px;
+
+        border-radius:
+            28px;
+    }
+
+    .glass-card h3 {
+        font-size: 15px;
+
+        letter-spacing: 2px;
+    }
+
+    .glass-card h1 {
+        font-size:
+            clamp(50px, 16vw, 68px);
+    }
+
+    .glass-card p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Button */
+
+    button {
+        padding:
+            14px 28px;
+
+        font-size: 15px;
+    }
+
+
+    /* Page 2 */
+
+    #page2 {
+        justify-content: center;
+
+        padding-top: 40px;
+    }
+
+    .countdown {
+        font-size:
+            clamp(90px, 30vw, 150px);
+    }
+
+
+    /* Page 3 */
+
+    #page3 {
+        justify-content: center;
+
+        padding-top: 50px;
+    }
+
+    #page3 h2 {
+        font-size:
+            clamp(45px, 13vw, 58px);
+
+        margin-bottom: 35px;
+    }
+
+    .gift-box {
+        transform:
+            scale(.88);
+    }
+
+    .gift-box:hover {
+        transform:
+            scale(.93);
+    }
+
+
+    /* Page 4 */
+
+    #page4 {
+        justify-content:
+            flex-start;
+
+        padding-top:
+            60px;
+
+        padding-bottom:
+            120px;
+    }
+
+    .birthday-card {
+        width: 96%;
+
+        padding:
+            45px 20px;
+
+        border-radius:
+            28px;
+    }
+
+    .birthday-card::before {
+        left: 15px;
+        top: 15px;
+
+        font-size: 28px;
+    }
+
+    .birthday-card::after {
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 28px;
+    }
+
+    .birthday-card h1 {
+        font-size:
+            clamp(48px, 15vw, 65px);
+    }
+
+    .birthday-card h2 {
+        font-size:
+            clamp(22px, 6vw, 30px);
+    }
+
+    .divider {
+        margin:
+            20px 0;
+
+        font-size: 18px;
+
+        letter-spacing: 3px;
+    }
+
+    #typing {
+        min-height: 220px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    #page4 .nextBtn {
+        margin-top: 15px;
+    }
+
+
+    /* Page 5 */
+
+    #page5 {
+        padding-top: 55px;
+    }
+
+    .memory-title {
+        font-size:
+            clamp(50px, 15vw, 68px);
+    }
+
+    .memory-subtitle {
+        font-size: 13px;
+
+        margin-bottom: 25px;
+    }
+
+    .memory-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 14px;
+    }
+
+    .memory-photo {
+        padding:
+            7px 7px 32px;
+    }
+
+    .memory-photo p {
+        font-size: 16px;
+    }
+
+
+    /* Page 6 */
+
+    #page6 {
+        padding-top:
+            60px;
+
+        padding-bottom:
+            150px;
+    }
+
+    .letter-heading {
+        font-size:
+            clamp(48px, 14vw, 65px);
+
+        margin-bottom: 35px;
+    }
+
+    .envelope-wrapper {
+        width: 320px;
+
+        height: 220px;
+
+        max-width: 92vw;
+    }
+
+    .letter-paper {
+        padding:
+            18px;
+    }
+
+    .letter-content {
+        font-size: 10px;
+
+        line-height: 1.6;
+    }
+
+    .letter-content h2 {
+        font-size: 28px;
+    }
+
+
+    /* Page 7 */
+
+    #page7 {
+        padding-top:
+            60px;
+
+        padding-bottom:
+            130px;
+    }
+
+    .wish-label {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .wish-title {
+        font-size:
+            clamp(55px, 15vw, 70px);
+    }
+
+    .wish-subtitle {
+        font-size: 13px;
+
+        max-width: 300px;
+
+        margin:
+            10px auto 20px;
+    }
+
+    .cake-scene {
+        transform:
+            scale(.82);
+
+        transform-origin:
+            center top;
+
+        margin:
+            10px auto -30px;
+    }
+
+    .blow-button {
+        margin-top:
+            0 !important;
+    }
+
+    .blow-hint {
+        font-size: 11px;
+    }
+
+
+    /* Page 8 */
+
+    #page8 {
+        justify-content:
+            flex-start;
+
+        padding-top:
+            55px;
+
+        padding-bottom:
+            150px;
+    }
+
+    .final-card {
+        width: 96%;
+
+        padding:
+            40px 20px;
 
         border-radius:
             30px;
 
-        max-height:
-            90vh;
+        max-height: none;
 
-        overflow-y:
-            auto;
+        overflow: visible;
+    }
+
+    .final-crown {
+        font-size: 38px;
     }
 
     .final-small {
@@ -3130,18 +2993,96 @@ background-position:200px 400px;
         letter-spacing: 2px;
     }
 
+    .final-title {
+        font-size:
+            clamp(58px, 17vw, 78px);
+    }
+
+    .final-name {
+        font-size:
+            clamp(38px, 11vw, 52px);
+    }
+
+    .final-divider {
+        font-size: 12px;
+
+        margin:
+            12px 0 18px;
+    }
+
     .final-message {
         font-size: 13px;
 
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .final-wish {
         font-size: 18px;
+
+        padding:
+            9px 16px;
+    }
+
+    .replay-button {
+        font-size: 14px;
+
+        padding:
+            13px 25px;
     }
 
     .final-heart {
         font-size: 22px;
     }
 
+    .firework {
+        transform:
+            scale(.7);
+    }
+
 }
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .page {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .memory-grid {
+        gap: 10px;
+    }
+
+    .memory-photo {
+        padding:
+            5px 5px 28px;
+    }
+
+    .memory-photo p {
+        font-size: 14px;
+    }
+
+    .envelope-wrapper {
+        width: 290px;
+        height: 200px;
+    }
+
+    .cake-scene {
+        transform:
+            scale(.72);
+
+        margin-bottom:
+            -55px;
+    }
+
+    .final-card {
+        padding:
+            35px 16px;
+    }
+
+}
+```
