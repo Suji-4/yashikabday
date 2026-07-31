@@ -1527,3 +1527,38 @@ transform:scale(1.8);
     }
 
 }
+
+
+@keyframes floatBalloon{
+
+0%{
+
+transform:translateY(120vh) translateX(0);
+
+}
+
+25%{
+
+transform:translateY(50vh) translateX(18px);
+
+}
+
+50%{
+
+transform:translateY(-10vh) translateX(-18px);
+
+}
+
+75%{
+
+transform:translateY(-80vh) translateX(20px);
+
+}
+
+100%{
+
+transform:translateY(-150vh) translateX(-20px);
+
+}
+
+}
