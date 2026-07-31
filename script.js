@@ -503,3 +503,32 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+// =====================================
+// HEART CURSOR TRAIL
+// =====================================
+
+document.addEventListener("mousemove", function(e){
+
+    const heart = document.createElement("div");
+
+    heart.className = "cursor-heart";
+
+    const hearts = ["❤️","💖","💕","💗","💘"];
+
+    heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+
+    heart.style.fontSize = (16 + Math.random()*12) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },900);
+
+});
