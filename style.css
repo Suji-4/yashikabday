@@ -1562,3 +1562,45 @@ transform:translateY(-150vh) translateX(-20px);
 }
 
 }
+
+/*=========================
+      HEART CURSOR
+=========================*/
+
+.cursor-heart{
+
+    position:fixed;
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    z-index:9999;
+
+    animation:heartFade .9s linear forwards;
+
+    text-shadow:0 0 10px hotpink;
+
+}
+
+@keyframes heartFade{
+
+0%{
+
+opacity:1;
+
+transform:translate(-50%,-50%) scale(.5);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translate(-50%,-90px) scale(1.8) rotate(25deg);
+
+}
+
+}
