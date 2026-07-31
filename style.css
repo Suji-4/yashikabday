@@ -1373,3 +1373,157 @@ transform:scale(1.8);
 }
 
 }
+
+/*=============================
+      FLOATING BALLOONS
+==============================*/
+
+.balloons{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.balloon{
+
+    position:absolute;
+
+    width:55px;
+
+    height:70px;
+
+    border-radius:50% 50% 45% 45%;
+
+    animation:floatBalloon linear infinite;
+
+    opacity:.65;
+
+}
+
+.balloon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+
+    height:90px;
+
+    background:white;
+
+    left:50%;
+
+    top:68px;
+
+}
+
+.b1{
+
+    left:5%;
+
+    background:#ff5f8f;
+
+    animation-duration:15s;
+
+}
+
+.b2{
+
+    left:18%;
+
+    background:#ffd54f;
+
+    animation-duration:20s;
+
+    animation-delay:3s;
+
+}
+
+.b3{
+
+    left:33%;
+
+    background:#7c4dff;
+
+    animation-duration:18s;
+
+}
+
+.b4{
+
+    left:50%;
+
+    background:#00e5ff;
+
+    animation-duration:22s;
+
+    animation-delay:5s;
+
+}
+
+.b5{
+
+    left:66%;
+
+    background:#69f0ae;
+
+    animation-duration:19s;
+
+}
+
+.b6{
+
+    left:80%;
+
+    background:#ff80ab;
+
+    animation-duration:23s;
+
+    animation-delay:6s;
+
+}
+
+.b7{
+
+    left:92%;
+
+    background:#ffab40;
+
+    animation-duration:17s;
+
+}
+
+.b8{
+
+    left:43%;
+
+    background:#ea80fc;
+
+    animation-duration:21s;
+
+}
+
+@keyframes floatBalloon{
+
+    from{
+
+        transform:translateY(120vh);
+
+    }
+
+    to{
+
+        transform:translateY(-150vh);
+
+    }
+
+}
